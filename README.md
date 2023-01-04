@@ -87,3 +87,9 @@
   - gem 'devise-i18n'
 
   - gem 'devise-i18n-views'
+
+## 使用素材
+
+- [unsplash](https://unsplash.com/ja)（予定）
+
+- [Canva](https://www.canva.com/)（予定）
