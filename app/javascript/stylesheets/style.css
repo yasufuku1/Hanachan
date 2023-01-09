@@ -5,16 +5,58 @@
 }
 body {
   line-height: 1.8em;
-  background: rgba(225, 230, 232, 1);
 }
 .container {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  width: 360px;
+  height: 500px;
+  margin: 60px auto 0;
 }
-.row{
-  padding-top: 20px
-  adding-bottom: 20px;
-  display: flex;
+.box {
+  padding: 15px 20px;
+}
+.field {
+  margin-bottom: 13px;
+}
+.field label {
+  font-weight: 700;
+  font-size: 16px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="password_confirmation"] {
+  font:15px;
+  width: 100%;
+  margin: 8px 0;
+	padding: 0.3em;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+	outline: none;
+	height: 29px;
+}
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field input[type="password"]:focus,
+.field input[type="password_confirmation"]:focus {
+	border-color: #da3c41;
+}
+.box-login {
+  width: 160px;
+  padding: 0.8em;
+  text-align: center;
+}
+.box-login input[type="submit"] {
+  width: 160px;
+  padding: 0.8em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #ffb6c1;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #ffb6c1;
+	color: #fff;
 }
 li {
   list-style: none;

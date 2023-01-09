@@ -2,18 +2,21 @@
 
   <h2>新規登録</h2>
 
-  <div class="row">
+  <div class="box">
     <%= form_with model: @user, url: user_registration_path do |f| %>
-      <%= render "public/shared/error_messages", resource: @user %>
+      <%#= render "public/shared/error_messages", resource: @user %>
 
       <div class="field">
         <%= f.label :name %><br />
         <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <%= render "public/shared/name_error_message", resource: @user %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= render "public/shared/email_error_message", resource: @user %>
+
       </div>
 
       <div class="field">
@@ -22,15 +25,19 @@
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= render "public/shared/password_error_message", resource: @user %>
+
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= render "public/shared/password_confim_error_message", resource: @user %>
+
       </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
+      <div class="box-login">
+        <%= f.submit "新規登録" %>
       </div>
     <% end %>
 

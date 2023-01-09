@@ -1,0 +1,3 @@
+<% if resource.errors.include?(:email) %>
+  <p style="color: red;"><%= resource.errors.full_messages_for(:email).first %>
+<% end %>
