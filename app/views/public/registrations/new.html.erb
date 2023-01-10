@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2>新規登録</h2>
+  <h2><span>新規登録</span></h2>
 
   <div class="box">
     <%= form_with model: @user, url: user_registration_path do |f| %>
@@ -36,7 +36,7 @@
 
       </div>
 
-      <div class="box-login">
+      <div class="button-box">
         <%= f.submit "新規登録" %>
       </div>
     <% end %>

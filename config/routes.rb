@@ -9,12 +9,11 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get "about"=>'homes#about'
-    resources :users, only: [:edit, :update] do
+    resources :users, only: [:show, :edit, :update] do
       resource :relationships, only:[:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
       collection do
-        get "my_page"=>"users#show"
         patch "unsubscribe"=>"users#unsubscribe"
         patch "withdraw"=>"users#withdraw"
       end

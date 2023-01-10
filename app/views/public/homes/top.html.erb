@@ -4,5 +4,13 @@
   </div>
 </div>
 <div class="container">
+  <p>
+    <% if user_signed_in? %>
+      <%= link_to user_path(current_user.id) do %>
+      ようこそ<%= current_user.name %>さん
+      <% end %>
+    <% end %>
+  </p>
+
 
 </div>

@@ -1,0 +1,17 @@
+<div class="main">
+  <div class="sec-01">
+    <h1>本当に退会しますか？</h1>
+    <p>退会されますと会員登録情報を閲覧できなくなります。<br>
+    ご注意ください。</p>
+
+    <div class="withdraw-box">
+      <div class="withdraw-left">
+        <%= link_to "退会しない", user_path(current_user.id) %>
+      </div>
+      <div class="withdraw-right">
+        <%= link_to "退会する", withdraw_users_path, method: :patch %>
+      </div>
+    </div>
+
+  </div>
+</div>

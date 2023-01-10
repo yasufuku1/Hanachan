@@ -1,2 +1,10 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="main">
+  <h1><span>マイページ</span></h1>
+  <%= current_user.name %>さん<br>
+  <%= link_to edit_user_path(current_user.id) do %>
+  編集する
+  <% end %><br>
+  <%= link_to root_path do %>
+  トップへ戻る
+  <% end %>
+</div>
