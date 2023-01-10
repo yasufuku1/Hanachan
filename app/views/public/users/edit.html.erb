@@ -4,15 +4,14 @@
 </div>
 <%= render "layouts/errors", obj: @user %>
 
-<div class="profile-box">
+<div class="profile-main">
 <%= form_with model: @user, local:true do |f| %>
-
-  <div class="left-field">
+  <div class="profile-box">
+    <div class="field">
     <%= f.label :profile_image %><br>
     <%= f.file_field :profile_image, accept: "image/*" %>
-  </div>
+    </div>
 
-  <div class="right-field">
     <div class="field">
       <%= f.label :name %>
       <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"名前" %>
@@ -29,11 +28,11 @@
       <%= f.label :introduction %>
       <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction", placeholder:"introduction" %>
     </div>
-  </div>
 
-  <div class="button-box">
-    <%= f.submit "変更を保存する" %>
-  <% end %>
-  <%= link_to "退会する", unsubscribe_users_path, method: :patch, class: "button-box" %>
+    <div class="button-box">
+      <%= f.submit "変更を保存する" %>
+    <% end %>
+    <%= link_to "退会する", unsubscribe_users_path, method: :patch, class: "button-box" %>
+    </div>
   </div>
 </div>

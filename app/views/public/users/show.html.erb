@@ -1,10 +1,24 @@
 <div class="main">
-  <h1><span>マイページ</span></h1>
-  <%= current_user.name %>さん<br>
+  <h2><span>マイページ</span></h2>
+</div>
+
+<%= current_user.name %>さん<br>
+<br>
+<%= link_to root_path do %>
+トップへ戻る
+<% end %>
+<div class="profile-show">
+  <div class="profile-box-image">
+    <%= image_tag @user.get_profile_image(100,100), class: "profile-img" %>
+
+  </div>
+  <div class="profile-box">
+    <%= @user.name %><br>
+    <%= @user.introduction %>
+  </div>
+</div>
+<div class="profile-show">
   <%= link_to edit_user_path(current_user.id) do %>
   編集する
-  <% end %><br>
-  <%= link_to root_path do %>
-  トップへ戻る
   <% end %>
 </div>
