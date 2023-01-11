@@ -27,6 +27,11 @@ ja:
         remember_me: "次回から自動的にログイン"
     models:
       user: "ユーザ"
+    attributes:
+      post:
+        image: "投稿写真"
+        title: "タイトル"
+        body: "投稿内容"
   devise:
     confirmations:
       new:
