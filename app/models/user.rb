@@ -16,4 +16,11 @@ class User < ApplicationRecord
     end
     profile_image.variant(resize_to_fill: [width, height], gravity: :center).processed
   end
+  # ゲストユーザの検索・作成を自動的に判断して処理を行うメソッド
+  def self.guest
+    find_or_create_by!(name: 'guestuser' ,email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "guestuser"
+    end
+  end
 end
