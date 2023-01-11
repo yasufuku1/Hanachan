@@ -9,10 +9,29 @@
 body {
   line-height: 1.8em;
 }
+.notice {
+  text-align: center;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  color: #0f5132;
+  line-height: 3.2em;
+}
+.alert {
+  text-align: center;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  color: #842029;
+  line-height: 3.2em;
+}
+/* ---------------------------- */
+/* ---- ログイン、
+        新規登録
+        プロフィール編集---- */
+/* ---------------------------- */
 .container {
-  width: 360px;
-  height: 500px;
-  margin: 60px auto 0;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 700px;
 }
 .container h2 {
   text-align: center;
@@ -21,7 +40,7 @@ body {
   margin-bottom: 21px;
 }
 .container h2 span {
-  font-size: 22px;
+  font-size: 27px;
   font-weight: 700;
   background-image: linear-gradient(344deg, rgba(93,162,87,1) 39%, rgba(231,128,128,1) 96%);
   -webkit-background-clip:  text;
@@ -33,7 +52,7 @@ body {
   padding: 15px 20px;
 }
 .field {
-  margin-bottom: 13px;
+  margin: 0 20px 13px;
 }
 .field label {
   font-weight: 700;
@@ -41,18 +60,21 @@ body {
   padding-left: 2px;
   padding-bottom: 2px;
 }
+::placeholder{
+  color: #ccc;
+}
 .field input[type="text"],
 .field input[type="email"],
 .field input[type="password"],
 .field input[type="password_confirmation"] {
-  font:15px;
+  font-size: 1.0em;
   width: 100%;
   margin: 8px 0;
 	padding: 0.3em;
 	border: 1px solid #1b2538;
 	border-radius: 4px;
 	outline: none;
-	height: 29px;
+	line-height: 2.0em;
 }
 .field input[type="text"]:focus,
 .field input[type="email"]:focus,
@@ -75,7 +97,6 @@ body {
 	background-color: #ee8194;
 	color: #fff;
 }
-
 li {
   list-style: none;
   padding-top: 20px;
@@ -85,7 +106,9 @@ li {
 /* ---------------------------- */
 
 .main {
-  margin: 40px auto;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1024px;
 }
 .main h1 {
   text-align: center;
@@ -110,32 +133,27 @@ li {
 /* ---------------------------- */
 .profile-show {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0;
 }
-.profile-box-image {
-  flex-grow :3;
+.profile-box-left {
+  flex-grow :2;
   text-align: center;
-  
 }
-.profile-img {
-}
-.profile-box {
+.profile-box-right {
   flex-grow :4;
+  display: flex;
+  justify-content: space-around;
 }
+.profile-item:last-child {
+  color: #d73038;
+  text-align: center;
+}
+
 /* ---------------------------- */
 /* ----プロフィール編集ページ---- */
 /* ---------------------------- */
-
-.profile-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.profile-main .profile-box {
-  float: left;
-  padding: 20px 10px 10px 10px;
-  width: 420px;
-}
-
 .field textarea {
   width: 100%;
   margin: 8px 0;
@@ -145,9 +163,11 @@ li {
 	outline: none;
 	height: 100px;
 	font-size: 1em;
+	font-weight: 700
 }
 .field textarea:focus {
 	border-color: #da3c41;
+	line-height: 1.8em;
 }
 /*退会ボタン用*/
 .button-box a {
@@ -162,7 +182,7 @@ li {
 	background-color: #301bbe;
 	color: #fff;
 	margin: 0 36px;
-	font-size: 13px;
+	font-size: 14px;
 }
 /* ---------------------------- */
 /* ----ユーザ退会ページ---- */
@@ -209,4 +229,15 @@ li {
 	background-color: #301bbe;
 	color: #fff;
 	font-size: 13px;
+}
+/* レスポンシブ対応 */
+@media screen and (max-width:530px){
+    .button-box {
+      display: block;
+  }
+  .button-box a {
+    margin: 10px auto;
+    height: 44px;
+    padding: 10px 30px;
+  }
 }

@@ -24,10 +24,16 @@
       <%= link_to "ログイン", new_user_session_path %>
     </li>
     <% end %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+    <% if flash[:notice] %>
+      <div class="notice">
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert">
+        <p><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
