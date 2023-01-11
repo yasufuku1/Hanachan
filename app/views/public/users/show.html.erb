@@ -1,0 +1,40 @@
+<div class="main">
+  <h2><span>マイページ</span></h2>
+
+  <%= current_user.name %>さん<br>
+  <br>
+  <div class="profile-show">
+    <div class="profile-box-left">
+      <%= image_tag @user.get_profile_image(100,100), class: "profile-img" %>
+    </div>
+    <div class="profile-box-right">
+      <div class="profile-item">
+        フォロワー
+      </div>
+      <div class="profile-item">
+        フォロ中ー
+      </div>
+      <div class="profile-item">
+        <i class="far fa-heart"></i>
+        お気に入り
+      </div>
+    </div>
+  </div>
+  <div class="profile-show">
+    <div class="profile-box-left">
+      <%= @user.name %>
+    </div>
+    <div class="profile-box-right">
+      <%= @user.introduction %>
+    </div>
+  </div>
+  <div class="profile-show">
+    <%= link_to edit_user_path(current_user.id) do %>
+    プロフィールを編集
+    <% end %><br>
+      <%= link_to root_path do %>
+  トップへ戻る
+  <% end %>
+
+  </div>
+</div>

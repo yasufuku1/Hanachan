@@ -12,6 +12,28 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+    <li>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </li>
+    <% else %>
+    <li>
+      <%= link_to "新規登録", new_user_registration_path %>
+    </li>
+    <li>
+      <%= link_to "ログイン", new_user_session_path %>
+    </li>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="notice">
+        <p><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert">
+        <p><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

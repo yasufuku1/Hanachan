@@ -1,0 +1,37 @@
+<div class="container">
+  <h2><span>プロフィール編集</span></h2>
+  <p>ようこそ<%= current_user.name %>さん</p>
+  <%= render "layouts/errors", obj: @user %>
+
+  <div class="box">
+  <%= form_with model: @user, local:true do |f| %>
+    <div class="field">
+      <%= f.label :"プロフィール画像" %><br>
+      <%= f.file_field :profile_image, accept: "image/*" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: '名前' %>
+      <%= render "public/shared/name_error_message", resource: @user %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+      <%= render "public/shared/email_error_message", resource: @user %>
+    </div>
+
+    <div class="field">
+      <%= f.label :introduction %>
+      <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction", placeholder: "introduction" %>
+    </div>
+
+    <div class="button-box">
+      <%= f.submit "変更を保存する" %>
+    <% end %>
+    <%= link_to "退会する", unsubscribe_users_path, method: :patch, class: "button-box" %>
+    </div>
+  </div>
+  </div>
+
