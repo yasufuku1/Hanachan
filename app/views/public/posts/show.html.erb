@@ -2,25 +2,29 @@
 <h2><span>投稿詳細</span></h2>
 
   <div class="article-user">
-    <%= link_to user_path(@post.id) do %>
-      <%= image_tag @post.user.get_profile_image(100,100), style: "border-radius: 50%;", class: "post-profile-img" %>
-    <div class="post-profile">
-      <%= @post.user.name %>
-    <% end %>
+    <div class="article-box">
+      <%= link_to user_path(@post.id) do %>
+        <%= image_tag @post.user.get_profile_image(100,100), style: "border-radius: 50%;", class: "post-profile-img" %>
+      <div class="post-profile">
+        <%= @post.user.name %>
+      <% end %>
+      </div>
     </div>
+    <div class="article-box">
     <% if @post.id == current_user.id %>
       <div class="edit-box">
       <%= link_to edit_post_path(@post.id), class: "edit-font" do %>
-        編集する
+        投稿記事を編集
         <i class="fas fa-edit"></i>
       <% end %>
       </div>
       <div class="delete-box">
       <%= link_to post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "delete-font" do %>
-        削除する
+        投稿を削除<i class="fas fa-trash-alt"></i>
       <% end %>
       </div>
     <% end %>
+    </div>
   </div>
 
     <div class="article">

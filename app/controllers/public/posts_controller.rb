@@ -1,6 +1,7 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update, :destroy]
   def index
+    @posts = Post.all
   end
 
   def show
@@ -34,6 +35,9 @@ class Public::PostsController < ApplicationController
   end
 
   def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_path,notice: "投稿を削除しました "
   end
 
   private
