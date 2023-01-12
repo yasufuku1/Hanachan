@@ -1,7 +1,8 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update, :destroy]
   def index
-    @posts = Post.all
+
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def show
@@ -19,7 +20,7 @@ class Public::PostsController < ApplicationController
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-    redirect_to post_path(current_user.id),notice: "投稿が完了しました "
+    redirect_to post_path(@post),notice: "投稿が完了しました "
     else
       render :new
     end

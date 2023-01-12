@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="article-box">
-    <% if @post.id == current_user.id %>
+    <% if @post.user_id == current_user.id %>
       <div class="edit-box">
       <%= link_to edit_post_path(@post.id), class: "edit-font" do %>
         投稿記事を編集
