@@ -1,32 +1,40 @@
 <div class="main">
-  <h2><span>投稿詳細</span></h2>
-  <div class="article">
-    <div class="sec-02-left">
-      <%= link_to user_path(@post.id) do %>
-        <%= image_tag @post.get_image(300,300), class: "article-image" %>
-      <% end %>
+<h2><span>投稿詳細</span></h2>
+
+  <div class="article-user">
+    <%= link_to user_path(@post.id) do %>
+      <%= image_tag @post.user.get_profile_image(100,100), style: "border-radius: 50%;", class: "post-profile-img" %>
+    <div class="post-profile">
+      <%= @post.user.name %>
+    <% end %>
     </div>
-    <div class="sec-02-right">
-      <div class="article-culom">
-        <%= @post.title %>
-      </div>
-      <div class="article-culom">
-        <%= @post.body %>
-      </div>
-    </div>
-  </div>
-  <div class="article-edit">
     <% if @post.id == current_user.id %>
-    <div class="edit-box">
+      <div class="edit-box">
       <%= link_to edit_post_path(@post.id), class: "edit-font" do %>
         編集する
+        <i class="fas fa-edit"></i>
       <% end %>
       </div>
       <div class="delete-box">
       <%= link_to post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "delete-font" do %>
-      削除する
+        削除する
       <% end %>
       </div>
     <% end %>
   </div>
+
+    <div class="article">
+      <div class="sec-02-left">
+          <%= image_tag @post.get_image(300,300), class: "article-image" %>
+      </div>
+      <div class="sec-02-right">
+        <div class="article-culom">
+          <%= @post.title %>
+        </div>
+        <div class="article-culom">
+          <%= @post.body %>
+        </div>
+      </div>
+  </div>
 </div>
+

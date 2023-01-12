@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 /* ---------------------------- */
-/* ---- 　　　　共通　　　---- */
+/* ---- フラッシュメッセージ---- */
 /* ---------------------------- */
 body {
   line-height: 1.8em;
@@ -26,7 +26,9 @@ body {
 /* ---------------------------- */
 /* ---- ログイン、
         新規登録
-        プロフィール編集---- */
+        プロフィール編集
+        新規投稿
+        投稿編集---- */
 /* ---------------------------- */
 .container {
   padding: 20px;
@@ -232,17 +234,37 @@ li {
 /* ---------------------------- */
 /* ----投稿詳細ページ---- */
 /* ---------------------------- */
+.article-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article-user .post-profile {
+  align-items: center;
+  padding: 0 20px;
+}
 .article {
   display: flex;
-  margin: 100px 0 50px;
+  margin: 40px 0;
+  background-color: #eee;
 }
 .article .sec-02-left {
+  display: flex;
   flex-grow :1;
-  text-align: center;
+  flex-wrap: wrap;
 }
-.article .sec-02-right {
-  margin: 10px 15px;
-  flex-grow :3;
+.article .sec-02-left .post-profile-img {
+  margin-left: 20px;
+}
+.article .sec-02-right .article-edit {
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+.article .sec-02-right .article-box {
+  display: block;
+  height: 300px;
 }
 .article-culom:first-child {
   display: block;
@@ -257,40 +279,25 @@ li {
   margin-left: 2px;
   letter-spacing: .11em;
 }
-.article-edit {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px 0;
-}
 /*投稿編集ボタン*/
-.article-edit .edit-box {
-  width: 160px;
+.sec-02-right .edit-box {
   padding: 0.8em 3.0em;
   text-align: center;
-	border: 2px solid #ee8194;
-	border-radius: 3px;
-	transition: .4s;
-	background-color: #ee8194;
 	margin: 10px 5px;
 }
 .edit-font {
-  color: #fff;
+  color: #008b8b;
   font-size: 15px;
   text-decoration: none;
 }
 /*投稿削除ボタン*/
-.article-edit .delete-box {
+.sec-02-right .delete-box {
   width: 160px;
-  padding: 0.8em 3.0em;
   text-align: center;
-	border: 2px solid #301bbe;
-	border-radius: 3px;
-	transition: .4s;
-	background-color: #301bbe;
 	margin: 10px 5px;
 }
 .delete-font {
-  color: #fff;
+  color: #696969;
   font-size: 15px;
   text-decoration: none;
 }
@@ -310,6 +317,7 @@ li {
   }
   .article .sec-02-left {
     background-color: #fff;
+    justify-content: center;
   }
   .article-image {
 
