@@ -37,10 +37,10 @@
   <% end %>
 
   <%= link_to "新規投稿", new_post_path %>
+  <%= link_to root_path do %>
+    トップへ戻る
+  <% end %>
   <div class="profile-show">
-    <%= link_to root_path do %>
-      トップへ戻る
-    <% end %>
     <% @user.posts.each do |post| %>
       <%= link_to post_path(post.id) do %>
         <%= image_tag post.get_image(200,200) %>

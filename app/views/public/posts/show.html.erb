@@ -3,7 +3,7 @@
 
   <div class="article-user">
     <div class="article-box">
-      <%= link_to user_path(@post.id) do %>
+      <%= link_to user_path(@post.user_id) do %>
         <%= image_tag @post.user.get_profile_image(100,100), style: "border-radius: 50%;", class: "post-profile-img" %>
       <div class="post-profile">
         <%= @post.user.name %>
@@ -36,7 +36,7 @@
           <%= @post.title %>
         </div>
         <div class="article-culom">
-          <%= @post.body %>
+          <%= simple_format(@post.body.description) %>
         </div>
       </div>
   </div>

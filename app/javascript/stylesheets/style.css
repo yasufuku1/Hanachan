@@ -151,15 +151,24 @@ li {
 .profile-box-left {
   flex-grow :2;
   text-align: center;
+  flex-basis: 40%;
 }
 .profile-box-right {
   flex-grow :4;
   display: flex;
   justify-content: space-around;
+  flex-basis: 60%;
 }
 .profile-item:last-child {
   color: #d73038;
   text-align: center;
+}
+.profile-show:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 14px 40px;
 }
 /* ---------------------------- */
 /* ----プロフィール編集ページ---- */
@@ -278,8 +287,8 @@ li {
   word-break: break-word;
 }
 .photoGarelly .items img.post-img {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 .photoGarelly .items .title p {
   word-break: break-word;
@@ -371,12 +380,29 @@ li {
   padding: 0 30px 25px;
 }
 /* レスポンシブ対応 */
+/*ここから記事投稿一覧*/
+/* 950以下821以上 */
 @media screen and (max-width:950px){
   /*記事投稿一覧*/
   .photoGarelly .items {
-    width: 46%;
+    width: 31%;
   }
 }
+/* 821以下以上 */
+@media screen and (max-width:821px){
+  /*記事投稿一覧*/
+  .photoGarelly .items {
+    width: 47%;
+  }
+}
+/* 649以下以上 */
+@media screen and (max-width:649px){
+  .photoGarelly .items {
+    width: 97%;
+  }
+}
+/*ここまで記事投稿一覧*/
+/*530以下スマホ対応*/
 @media screen and (max-width:530px){
   .button-box {
     display: block;
@@ -423,9 +449,5 @@ li {
   }
   .article-edit .delete-box {
     margin: 10px auto;
-  }
-/*記事投稿一覧*/
-  .photoGarelly .items {
-    width: 97%;
   }
 }
