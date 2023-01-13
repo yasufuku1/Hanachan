@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     resources :posts do
       resource :favorites, only: [:create,:destroy]
       resources :post_comments, only: [:create,:destroy]
+      collection do
+        get "search"=>'posts#search',as: 'search'
+      end
     end
     resources :notifications, only: :index
   end

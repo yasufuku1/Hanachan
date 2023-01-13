@@ -83,6 +83,32 @@ body {
   text-align: center;
 }
 /* ---------------------------- */
+/* ----検索フォーム、ボタン---- */
+/* ---------------------------- */
+.search {
+  position: relative;
+}
+.search input[type="text"] {
+  border: none;
+  position: relative;
+  height: 30px;
+  width: 210px;
+  border-radius: 6px;
+}
+.search .btn-search {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 184px;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+}
+/* ---------------------------- */
+/* ----検索一覧---- */
+/* ---------------------------- */
+
+/* ---------------------------- */
 /* ---- ログイン、
         新規登録
         プロフィール編集
