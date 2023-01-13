@@ -39,6 +39,7 @@
       <%= link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post %>
     </li>
     <% end %>
+    <%= render "public/posts/search_word" %>
     <% if flash[:notice] %>
       <div class="notice">
         <p><%= notice %></p>

@@ -1,5 +1,14 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update, :destroy]
+
+  def search
+    @search = Post.search(params[:word])
+    if @search == nil
+        redirect_to posts_path,alert: "検索結果がありません "
+      else
+    @posts = @search.order(created_at: :desc).page(params[:page]).per(8)
+    end
+  end
   def index
     @posts = Post.all.order(created_at: :desc).page(params[:page]).per(8)
   end

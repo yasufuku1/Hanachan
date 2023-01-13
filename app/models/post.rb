@@ -14,4 +14,10 @@ class Post < ApplicationRecord
     end
     image.variant(resize_to_fill: [width, height], gravity: :center).processed
   end
+
+  def self.search(word)
+    if word != ""
+    Post.where(['title LIKE? or body LIKE?', "%#{word}%", "%#{word}%"])
+    end
+  end
 end
