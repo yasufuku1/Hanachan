@@ -13,7 +13,9 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= render "public/posts/search_word" %>
+    <div class="search_box">
+      <%= render "public/posts/search_word" %>
+    </div>
     <% if flash[:notice] %>
       <div class="notice">
         <p><%= notice %></p>
@@ -25,5 +27,7 @@
       </div>
     <% end %>
     <%= yield %>
+    <!--jquery読み込み-->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   </body>
 </html>

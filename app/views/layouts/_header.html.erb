@@ -1,37 +1,45 @@
- <header>
-    <ul>
+  <header>
+    <div id="drawer_toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <h1>logo</h1>
+    <nav id="gloval-nav">
+    <ul class="menu-group">
        <!--ユーザ側ログイン-->
       <% if user_signed_in? %>
-      <li>
+      <li clas="menu-item">
         <%= link_to "マイページ", user_path(current_user.id) %>
       </li>
-      <li>
+      <li clas="menu-item">
         <%= link_to "投稿一覧", posts_path %>
       </li>
-      <li>
+      <li clas="menu-item">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
       <!--管理者側ログイン-->
       <% elsif admin_signed_in? %>
-      <li>
+      <li clas="menu-item">
         <%= link_to "ユーザ一覧", admin_users_path %>
       </li>
-      <li>
+      <li clas="menu-item">
         <%= link_to "ログアウト", destroy_admin_session_path,method: :delete %>
       </li>
       <% else %>
-      <li>
+      <li clas="menu-item">
         <%= link_to "新規登録", new_user_registration_path %>
       </li>
-      <li>
+      <li clas="menu-item">
         <%= link_to "ログイン", new_user_session_path %>
       </li>
-      <li>
+      <li clas="menu-item">
         <%= link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post %>
       </li>
-      <li>
+      <li clas="menu-item">
         <%= link_to "投稿一覧", posts_path %>
       </li>
       <% end %>
       </ul>
+    </nav>
 </header>
