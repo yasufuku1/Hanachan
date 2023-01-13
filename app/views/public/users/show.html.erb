@@ -1,11 +1,8 @@
 <div class="main">
   <h2><span>マイページ</span></h2>
-
-  <%= current_user.name %>さん<br>
-  <br>
   <div class="profile-show">
     <div class="profile-box-left">
-      <%= image_tag @user.get_profile_image(100,100), class: "profile-img" %>
+      <%= image_tag @user.get_profile_image(100,100), style: "border-radius: 50%;", class: "profile-img" %>
     </div>
     <div class="profile-box-right">
       <div class="profile-item">
@@ -14,10 +11,12 @@
       <div class="profile-item">
         フォロ中ー
       </div>
-      <div class="profile-item">
-        <i class="far fa-heart"></i>
-        お気に入り
-      </div>
+      <% if current_user == @user %>
+        <div class="profile-favorite-item">
+          <i class="far fa-heart"></i>
+          お気に入り
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="profile-show">
@@ -28,6 +27,7 @@
       <%= @user.introduction %>
     </div>
   </div>
+<!--ログインしているユーザと一致し、かつゲストログインでなければ編集できる-->
   <% if @user.id == current_user.id %>
     <% if @user.name != "guestuser" %>
       <%= link_to edit_user_path(current_user.id) do %>
@@ -35,9 +35,16 @@
       <% end %><br>
     <% end %>
   <% end %>
+
+  <%= link_to "新規投稿", new_post_path %>
+  <%= link_to root_path do %>
+    トップへ戻る
+  <% end %>
   <div class="profile-show">
-    <%= link_to root_path do %>
-      トップへ戻る
+    <% @user.posts.each do |post| %>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.get_image(200,200) %>
+      <% end %>
     <% end %>
   </div>
 </div>

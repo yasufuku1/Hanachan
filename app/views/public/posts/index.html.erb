@@ -1,2 +1,25 @@
-<h1>Public::Posts#index</h1>
-<p>Find me in app/views/public/posts/index.html.erb</p>
+<div class="photo-container">
+  <h2><span>投稿一覧</span></h2>
+  <div class="photoGarelly">
+    <% @posts.each do |post| %>
+    <div class="items">
+      <%= image_tag post.get_image(120, 120), class: "post-img" %>
+　　  <div class="index-article">
+      <p class="title-font">
+          <%= post.title.truncate(11) %>
+      </p>
+　    <span><%= post.body.truncate(25) %></span>
+　    <div class="read-more">
+       　 <%= link_to post_path(post.id) do %>
+       　    <p class="read-more">read more…</p>
+         <% end %>
+      </div>
+   　  </div>
+　　</div>
+    <% end %>
+  </div>
+  <div class="kaminari">
+      <%= paginate @posts %>
+  </div>
+</div>
+

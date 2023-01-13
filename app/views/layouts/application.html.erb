@@ -12,9 +12,21 @@
   </head>
 
   <body>
+    <!--ユーザ側ログイン-->
     <% if user_signed_in? %>
     <li>
+      <%= link_to "マイページ", user_path(current_user.id) %>
+    </li>
+    <li>
+      <%= link_to "投稿一覧", posts_path %>
+    </li>
+    <li>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    </li>
+    <!--管理者側ログイン-->
+    <% elsif admin_signed_in? %>
+    <li>
+      <%= link_to "ユーザ一覧", admin_users_path %>
     </li>
     <% else %>
     <li>
