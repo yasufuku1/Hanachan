@@ -4,6 +4,12 @@ class Public::UsersController < ApplicationController
   before_action :ensure_guest_user, only: [:edit]
 
   def show
+    # unsubscribeでリロードされた時の対策
+    if params[:id] == "unsubscribe"
+      redirect_to root_path, notice: "リロードされた為トップページに戻りました"
+      return
+    end
+
     @user = User.find(params[:id])
     @posts = Post.all
   end

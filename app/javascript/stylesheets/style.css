@@ -11,6 +11,7 @@ a {
 /* ---------------------------- */
 body {
   line-height: 1.8em;
+  background-color: #eee;
 }
 .notice {
   text-align: center;
@@ -76,9 +77,11 @@ body {
   color: transparent;
 }
 /* ---------------------------- */
-/* ---- 　grid　　---- */
+/* ---- 　kaminari　　---- */
 /* ---------------------------- */
-
+.kaminari {
+  text-align: center;
+}
 /* ---------------------------- */
 /* ---- ログイン、
         新規登録
@@ -135,6 +138,10 @@ body {
 	background-color: #ee8194;
 	color: #fff;
 }
+.button-box input[type="submit"]:hover {
+	background-color: #fff;
+  color: #ee8194;
+}
 li {
   list-style: none;
   padding-top: 20px;
@@ -159,7 +166,7 @@ li {
   justify-content: space-around;
   flex-basis: 60%;
 }
-.profile-item:last-child {
+.profile-favorite-item {
   color: #d73038;
   text-align: center;
 }
@@ -201,7 +208,11 @@ li {
 	background-color: #301bbe;
 	color: #fff;
 	margin: 0 36px;
-	font-size: 14px;
+	font-size: 13px;
+}
+.button-box a:hover {
+  background-color: #fff;
+  color: #301bbe;
 }
 /* ---------------------------- */
 /* ----ユーザ退会ページ---- */
@@ -210,10 +221,14 @@ li {
  text-align: center;
  padding: 40px 0;
 }
+.sec-01 p {
+  margin: 30px 0 15px;
+  font-size: 20px;
+}
 .withdraw-box {
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 .sec-01 .withdraw-box .withdraw-left {
   float: left;
@@ -236,6 +251,10 @@ li {
 	color: #fff;
 	font-size: 13px;
 }
+.sec-01 .withdraw-box .withdraw-left a:hover {
+	background-color: #fff;
+	color: #ee8194;
+}
 /*退会するは退会ボタン*/
 .sec-01 .withdraw-box .withdraw-right a {
   width: 160px;
@@ -248,6 +267,10 @@ li {
 	background-color: #301bbe;
 	color: #fff;
 	font-size: 13px;
+}
+.sec-01 .withdraw-box .withdraw-right a:hover {
+	background-color: #fff;
+	color: #301bbe;
 }
 /* ---------------------------- */
 /* ----投稿一覧ページ---- */
@@ -275,7 +298,7 @@ li {
 .photoGarelly {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 5px;
+  margin: 5px;
 }
 .photoGarelly .items {
   display: flex;
@@ -283,16 +306,38 @@ li {
   width: 23%;
   margin: 9px;
 }
-.photoGarelly .items .title {
-  word-break: break-word;
-}
 .photoGarelly .items img.post-img {
   text-align: center;
   width: 100%;
 }
-.photoGarelly .items .title p {
-  word-break: break-word;
+.photoGarelly .items .index-article {
+  display: flex;
+  flex-direction: column;
+}
+.photoGarelly .items .index-article .title-font {
+  font-weight: 600;
   text-align: center;
+}
+.photoGarelly .items .index-article span {
+  height: 20px;
+}
+.photoGarelly .items .index-article .read-more {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  margin-top: 2px;
+}
+.photoGarelly .items .index-article .read-more p {
+  border: 2px solid #00BCD4;
+  background: #00BCD4;
+  border-radius: 3px;
+  color: #fff;
+  padding: 2px;
+  width: 110px;
+}
+.photoGarelly .items .index-article .read-more p:hover {
+  background: #fff;
+  color: #00BCD4;
 }
 /* ---------------------------- */
 /* ----投稿詳細ページ---- */

@@ -3,7 +3,7 @@ class Post < ApplicationRecord
 
   validates :image, presence: true
   validates :title, presence: true, length: { minimum: 1, maximum: 50 }
-  validates :body, presence: true, length: { minimum: 1, maximum: 250 }
+  validates :body, presence: true, length: { minimum: 1, maximum: 300 }
 
   has_one_attached :image
 

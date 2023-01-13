@@ -1,8 +1,7 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update, :destroy]
   def index
-
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def show
@@ -29,7 +28,7 @@ class Public::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(current_user.id),notice: "投稿を編集しました "
+      redirect_to post_path(@post),notice: "投稿を編集しました "
     else
       render :edit
     end
