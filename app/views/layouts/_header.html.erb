@@ -1,45 +1,78 @@
-  <header>
-    <div id="drawer_toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <h1>logo</h1>
-    <nav id="gloval-nav">
-    <ul class="menu-group">
-       <!--ユーザ側ログイン-->
-      <% if user_signed_in? %>
-      <li clas="menu-item">
-        <%= link_to "マイページ", user_path(current_user.id) %>
-      </li>
-      <li clas="menu-item">
-        <%= link_to "投稿一覧", posts_path %>
-      </li>
-      <li clas="menu-item">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-      <!--管理者側ログイン-->
-      <% elsif admin_signed_in? %>
-      <li clas="menu-item">
-        <%= link_to "ユーザ一覧", admin_users_path %>
-      </li>
-      <li clas="menu-item">
-        <%= link_to "ログアウト", destroy_admin_session_path,method: :delete %>
-      </li>
-      <% else %>
-      <li clas="menu-item">
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li clas="menu-item">
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-      <li clas="menu-item">
-        <%= link_to "ゲストログイン(閲覧用)", users_guest_sign_in_path, method: :post %>
-      </li>
-      <li clas="menu-item">
-        <%= link_to "投稿一覧", posts_path %>
-      </li>
+<header>
+  <div class="header_a">
+    <!--ロゴヘッダー-->
+    <div class="log_header">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo.png', size: "90x90" %>
       <% end %>
+    </div>
+
+    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+    <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+    <!-- ハンバーガーアイコン -->
+    <label for="drawer_input" class="drawer_open"><span></span></label>
+
+    <!---ナビゲーション->-->
+    <nav class="area_nav_header">
+      <ul class="list_nav_header">
+         <!--ユーザ側ログイン-->
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to user_path(current_user.id) do %>
+            <p class="nav-font">マイページ</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to posts_path do %>
+          <p class="nav-font">投稿一覧</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <p class="nav-font">ログアウト</p>
+          <% end %>
+        </li>
+        <!--管理者側ログイン-->
+        <% elsif admin_signed_in? %>
+        <li class="nav-item">
+          <%= link_to admin_users_path do %>
+            <p class="nav-font">ユーザ一覧</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to destroy_admin_session_path,method: :delete do %>
+            <p class="nav-font">ログアウト</p>
+          <% end %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to new_user_registration_path do %>
+          <p class="nav-font">新規登録</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to new_user_session_path do %>
+            <p class="nav-font">ログイン</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to users_guest_sign_in_path, method: :post do %>
+            <p class="nav-font">ゲストログイン(閲覧用)</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to posts_path do %>
+            <p class="nav-font">投稿一覧</p>
+          <% end %>
+        </li>
+        <% end %>
+        <li class="nav-item">
+          <div class="search_box">
+            <%= render "public/posts/search_word" %>
+          </div>
+        </li>
       </ul>
     </nav>
+  </div>
 </header>
