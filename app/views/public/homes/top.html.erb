@@ -1,14 +1,14 @@
-<div class="main">
+<div class="top-main">
   <div class="main-box">
     <div class="top_image">
-      <%= image_tag 'top_image.jpg', width: "90%", height: "90%" %>
+      <%= image_tag 'top_image.jpg', width: "100%", height: "100%" %>
       <div class="top-font">
         <h1>花のある暮らしを始めよう</h1>
       </div>
     </div>
   </div>
+  <div class="about">
 </div>
-<div class="container">
   <p>
     <% if user_signed_in? %>
       <%= link_to user_path(current_user.id) do %>
@@ -16,6 +16,5 @@
       <% end %>
     <% end %>
   </p>
-
-
+  <p>ここにアバウトメニュー挿入予定</p>
 </div>

@@ -111,26 +111,35 @@ body {
 /* ---------------------------- */
 /* ---- topページ---- */
 /* ---------------------------- */
-.main .main-box {
+/*topページ*/
+.top-main {
+
+}
+.top-main .main-box {
   text-align: center;
 }
-.main .main-box .top_image {
+.top-main .main-box .top_image {
 }
-.main .main-box .top_image img {
+.top-main .main-box .top_image img {
   opacity: 0.6;
   position: relative;
 
 }
-.main .main-box .top-font {
+.top-main .main-box .top-font {
   position: absolute;
-  top: 303px;
-  left: 230px;
-  background: #F08080;
+  top: 37%;
+  left: 27%;
+  width: 31%;
+  background: #FFFAF0;
   opacity: 0.8;
   animation-name: fadein;
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+}
+.top-main .main-box .top_image .top-font h1 {
+  font-size: 1.1rem;
+  padding: 0.4rem;
 }
 /*アニメーション*/
 @keyframes fadein {
@@ -141,6 +150,31 @@ body {
   100% {
      opacity: 1;
      transform: translateX(20px);
+  }
+}
+/*aboutページ*/
+.about {
+  animation-name: scrollAnumation;
+  animation-duration: 1.8S;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+@keyframes scrollAnumation {
+  0% {
+     transform-origin: top;
+     transform: translate(0);
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  75% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+     transform: scaleY(0);
+     transform-origin: bottom;
   }
 }
 /* ---------------------------- */
@@ -451,6 +485,7 @@ body {
   display: flex;
   flex-grow :1;
   flex-wrap: wrap;
+  align-items: center;
 }
 .article .sec-02-right .article-edit {
   height: 40px;
