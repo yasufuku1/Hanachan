@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*ヘッダー*/
+header {
+    background-color: #eee;
+    text-align: center;
+}
+.header_a {
+    max-width: 1260px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px 30px 5px;
+}
+.header_a .log_header {
+    display: block;
+}
+/*ナビゲーション*/
+.area_nav_header {
+    margin-left: auto;
+}
+.area_nav_header .list_nav_header {
+    display: flex;
+    justify-content: center;
+}
+.area_nav_header .list_nav_header .nav-item {
+    list-style: none;
+    padding-left: 15px;
+}
+.area_nav_header .list_nav_header .nav-item .nav-font {
+    font-size: 15px;
+    font-weight: bold;
+    color: #696969;
+}
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: none;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;/* 重なり順を一番上にする */
+  cursor: pointer;
+}
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #333;
+  transition: 0.5s;
+  position: absolute;
+}
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+  bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+  top: 8px;
+}
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked ~ .drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked ~ .drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+  background: #fff;
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+  background: #fff;
+}
+/*フッター*/
+html.fontawesome-i2svg-active.fontawesome-i2svg-complete {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+footer {
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
+.footer_a {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*800以下ハンバーガーメニューになる*/
+@media screen and (max-width:800px){
+    /*ロゴと3本線は両端にする*/
+    .header_a {
+        justify-content: space-between;
+    }
+    .area_nav_header {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%; /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: #000000;
+        opacity: 0.8;
+        transition: .5s;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    /*3本線出現*/
+    .drawer_open {
+        display: flex;
+    }
+    /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked ~ .area_nav_header {
+        left: 0;/* メニューを画面に入れる */
+    }
+    #drawer_input:checked ~ .area_nav_header .list_nav_header {
+        display: flex;
+        flex-direction: column;
+    }
+    #drawer_input:checked ~ .area_nav_header .list_nav_header .nav-item{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    #drawer_input:checked ~ .area_nav_header .list_nav_header .nav-item .nav-font {
+       color: #fff;
+       font-size: 17px;
+    }
+}

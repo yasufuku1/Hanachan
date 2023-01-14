@@ -11,7 +11,6 @@ a {
 /* ---------------------------- */
 body {
   line-height: 1.8em;
-  background-color: #eee;
 }
 .notice {
   text-align: center;
@@ -79,12 +78,16 @@ body {
 /* ---------------------------- */
 /* ---- 　kaminari　　---- */
 /* ---------------------------- */
-.kaminari {
+.photo-container .kaminari {
   text-align: center;
 }
 /* ---------------------------- */
 /* ----検索フォーム、ボタン---- */
 /* ---------------------------- */
+.search_box {
+  text-align: right;
+  margin-right: 5px;
+}
 .search {
   position: relative;
 }
@@ -94,16 +97,22 @@ body {
   height: 30px;
   width: 210px;
   border-radius: 6px;
+  padding: 0 25px 0 10px
 }
 .search .btn-search {
   position: absolute;
   top: 2px;
   bottom: 2px;
-  left: 184px;
+  right: 9px;
   background: #fff;
   border: none;
   border-radius: 6px;
 }
+/* ---------------------------- */
+/* ----検索フォーム、ボタン---- */
+/* ---------------------------- */
+
+
 /* ---------------------------- */
 /* ----検索一覧---- */
 /* ---------------------------- */
@@ -168,10 +177,6 @@ body {
 	background-color: #fff;
   color: #ee8194;
 }
-li {
-  list-style: none;
-  padding-top: 20px;
-}
 /* ---------------------------- */
 /* ----プロフィール詳細ページ---- */
 /* ---------------------------- */
@@ -214,7 +219,7 @@ li {
 	border-radius: 4px;
 	outline: none;
 	line-height: 1.8em;
-	font-size: 1.2em;
+	font-size: 0.9em;
 	font-weight: 500;
 	height: 100px;
 }
@@ -451,7 +456,6 @@ li {
   padding: 0 30px 25px;
 }
 /* レスポンシブ対応 */
-/*ここから記事投稿一覧*/
 /* 950以下821以上 */
 @media screen and (max-width:950px){
   /*記事投稿一覧*/
@@ -468,11 +472,11 @@ li {
 }
 /* 649以下以上 */
 @media screen and (max-width:649px){
+  /*記事投稿一覧*/
   .photoGarelly .items {
     width: 97%;
   }
 }
-/*ここまで記事投稿一覧*/
 /*530以下スマホ対応*/
 @media screen and (max-width:530px){
   .button-box {
