@@ -109,14 +109,40 @@ body {
   border-radius: 6px;
 }
 /* ---------------------------- */
-/* ----検索フォーム、ボタン---- */
+/* ---- topページ---- */
 /* ---------------------------- */
+.main .main-box {
+  text-align: center;
+}
+.main .main-box .top_image {
+}
+.main .main-box .top_image img {
+  opacity: 0.6;
+  position: relative;
 
-
-/* ---------------------------- */
-/* ----検索一覧---- */
-/* ---------------------------- */
-
+}
+.main .main-box .top-font {
+  position: absolute;
+  top: 303px;
+  left: 230px;
+  background: #F08080;
+  opacity: 0.8;
+  animation-name: fadein;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+/*アニメーション*/
+@keyframes fadein {
+  0% {
+     opacity: 0;
+     transform: translateX(0);
+  }
+  100% {
+     opacity: 1;
+     transform: translateX(20px);
+  }
+}
 /* ---------------------------- */
 /* ---- ログイン、
         新規登録
