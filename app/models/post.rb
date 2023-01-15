@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 
   validates :image, presence: true
   validates :title, presence: true, length: { minimum: 1, maximum: 50 }
@@ -19,5 +20,9 @@ class Post < ApplicationRecord
     if word != ""
     Post.where(['title LIKE? or body LIKE?', "%#{word}%", "%#{word}%"])
     end
+  end
+  # Favoritesテーブル内にuserが存在（exists?）するかどうかを調べる
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
   end
 end

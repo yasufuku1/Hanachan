@@ -1,9 +1,23 @@
-<div class="main">
+<div class="top-main">
   <div class="main-box">
-    <h1>花のある暮らしを始めよう</h1>
+    <div class="top_image">
+      <%= image_tag 'top_image.jpg', width: "100%", height: "100%" %>
+      <div class="top-font">
+        <h2>花のある暮らしを始めよう</h2>
+      </div>
+    </div>
   </div>
-</div>
-<div class="container">
+  <div class="about-box">
+  <h2 class="about-topic-01"><span>About</span></h2>
+  <h3 class="about-topic-02"><span>Hanachanは”花のある暮らし”送る人のために</span><br>
+    <span>多種多様な花の画像を豊富に揃えたSNSサイトです。</span></h3>
+    <div class="about-topic-04">
+      <p>コロナの影響によりおうち時間が長くなり、<br>
+        部屋に花を飾る人が増えてきました。</p>
+        <p>そこで、花を飾る機会が少ない人でもおしゃれに花を飾れるよう<br>
+          ユーザから花を投稿してもらうSNSサイトを設立しました。</p>
+      <p>本サイトが皆様の理想の花を見つけるお手伝いが出来れば幸いです。</p>
+    </div>
   <p>
     <% if user_signed_in? %>
       <%= link_to user_path(current_user.id) do %>
@@ -11,6 +25,17 @@
       <% end %>
     <% end %>
   </p>
-
-
 </div>
+<script>
+    ScrollReveal({
+      reset: true,
+      duration: 2000 });
+    // スクロールしたら現れる
+    ScrollReveal().reveal('.top-font', { delay: 500, origin: "left"});
+    ScrollReveal().reveal('.about-box', { delay: 500, origin: "left"});
+    ScrollReveal().reveal('.about-topic-01', { delay: 600, origin: "bottom" });
+    ScrollReveal().reveal('.about-topic-02', { delay: 700, origin: "bottom" });
+    ScrollReveal().reveal('.about-topic-03', { delay: 800, origin: "bottom" });
+    ScrollReveal().reveal('.about-topic-04', { delay: 700, origin: "bottom" });
+
+</script>

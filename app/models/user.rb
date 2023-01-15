@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   has_one_attached :profile_image
 
