@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update, :destroy]
+  before_action :login_check_user,only: [:show]
 
   def search
     @search = Post.search(params[:word])
@@ -58,7 +59,13 @@ class Public::PostsController < ApplicationController
   def ensure_correct_user
     @post = Post.find(params[:id])
     unless @post.user == current_user
-      redirect_to posts_path
+      redirect_to posts_path, alert: "不正なアクセスです"
+    end
+  end
+
+  def login_check_user
+    if current_user.nil?
+      redirect_to posts_path, alert: "これより先のサービスはログインが必要となります"
     end
   end
 end
