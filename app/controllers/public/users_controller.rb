@@ -45,7 +45,7 @@ class Public::UsersController < ApplicationController
   def ensure_correct_user
     @user = User.find(params[:id])
     unless @user == current_user
-      redirect_to user_path(current_user), alert: "不正なアクセスです。"
+      redirect_to user_path(current_user), alert: "不正なアクセスです"
     end
   end
 

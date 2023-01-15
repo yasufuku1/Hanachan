@@ -12,10 +12,12 @@
         5<br>フォロ中ー
       </div>
       <% if current_user == @user %>
+      <%= link_to user_favorites_path(@user) do %>
         <div class="profile-favorite-item">
           <i class="far fa-heart"></i> <%= @user.favorites.count %><br>
           お気に入り
         </div>
+        <% end %>
       <% end %>
     </div>
   </div>
