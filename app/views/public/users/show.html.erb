@@ -6,10 +6,10 @@
     </div>
     <div class="profile-box-right">
       <div class="profile-item">
-        7<br>フォロワー
+        <%#= @user.follower_user %><br>フォロワー
       </div>
       <div class="profile-item">
-        5<br>フォロ中ー
+        <%#= @user.following_user %><br>フォロ中ー
       </div>
       <% if current_user == @user %>
       <%= link_to user_favorites_path(@user) do %>
