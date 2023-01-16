@@ -1,0 +1,10 @@
+<table>
+  <tbody>
+    <tr>
+      <% @users.each do |user| %>
+        <td><%= image_tag user.get_profile_image(100, 100), size: "50x50" %></td>
+        <td><%= user.name %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
