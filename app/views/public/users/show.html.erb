@@ -7,12 +7,12 @@
     <div class="profile-box-right">
       <div class="profile-item">
         <%= link_to user_followings_path(@user) do %>
-          <%= @user.following.count %><br>フォロワー
+          <%= @user.followings.count %><br>フォロワー
         <% end %>
       </div>
       <div class="profile-item">
         <%= link_to user_followers_path(@user) do %>
-          <%= @user.follower.count %><br>フォロ中ー
+          <%= @user.followers.count %><br>フォロ中ー
         <% end %>
       </div>
       <% if current_user == @user %>
@@ -33,14 +33,20 @@
       <%= @user.introduction %>
     </div>
   </div>
+  <div class="profile-show">
 <!--ログインしているユーザと一致し、かつゲストログインでなければ編集できる-->
-  <% if @user.id == current_user.id %>
-    <% if @user.name != "guestuser" %>
-      <%= link_to edit_user_path(current_user.id) do %>
-      プロフィールを編集
-      <% end %><br>
-    <% end %>
-  <% end %>
+    <div class="profile-edit-btn">
+      <% if @user.name != "guestuser" %>
+        <% if  @user.id == current_user.id %>
+          <%= link_to edit_user_path(current_user.id) do %>
+            <i class="fas fa-user-edit"></i>プロフィールを編集<br>
+          <% end %>
+        <% else %>
+        <%= render "public/relationships/relationships_btn", user: @user %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
   <%= link_to "新規投稿", new_post_path %>
   <%= link_to root_path do %>
