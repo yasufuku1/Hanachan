@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/**/
+.relationships {
+  margin: 40px auto;
+}
+.relationships .follower-user{
+  display: flex;
+  align-items: center;
+  padding: 0 0.8em 1.4em;
+  margin: 2em 0;
+  border-bottom: 2px solid #808080;
+}
+.relationships .follower-user:last-child{
+  display: flex;
+  align-items: center;
+  padding: 0 0.8em;
+  margin: 2em 0;
+  border-bottom: none;
+}
+.relationships .follower-user .user-item:first-child{
+  flex-grow :1;
+  flex-basis: 35%;
+  text-align: center;
+}
+.relationships .follower-user .user-item:nth-child(2){
+  flex-grow :2;
+  flex-basis: 35%;
+  padding: 2.5em;
+}
+.relationships .follower-user .user-item:last-child{
+  flex-grow : 2;
+  flex-basis: 40%;
+  text-align: center;
+}
+/*フォロワー・フォローボタン*/
+.profile-follow-btn a {
+  background-color: #c0c0c0;
+  padding: 0.3em 1.8em;
+  text-align: center;
+	text-decoration: none;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  transition: .4s;
+  color: #fff;
+}
+.profile-follow-btn a:hover {
+  color: #c0c0c0;
+  background-color: #fff;
+}
+/* レスポンシブ対応 */
+/* 530以下*/
+@media screen and (max-width:530px){
+  /*記事投稿一覧*/
+  .relationships .follower-user{
+    flex-wrap: wrap;
+  }
+}

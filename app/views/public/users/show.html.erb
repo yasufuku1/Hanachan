@@ -2,14 +2,19 @@
   <h2><span>マイページ</span></h2>
   <div class="profile-show">
     <div class="profile-box-left">
-      <%= image_tag @user.get_profile_image(100,100), style: "border-radius: 50%;", class: "profile-img" %>
+      <%= image_tag @user.get_profile_image(90,90), style: "border-radius: 50%;", class: "profile-img" %>
+      <span><%= @user.name %></span>
     </div>
     <div class="profile-box-right">
       <div class="profile-item">
-        7<br>フォロワー
+        <%= link_to user_followers_path(@user) do %>
+          <%= @user.followers.count %><br>フォロワー
+        <% end %>
       </div>
       <div class="profile-item">
-        5<br>フォロ中ー
+        <%= link_to user_followings_path(@user) do %>
+          <%= @user.followings.count %><br>フォロー中
+        <% end %>
       </div>
       <% if current_user == @user %>
       <%= link_to user_favorites_path(@user) do %>
@@ -21,27 +26,30 @@
       <% end %>
     </div>
   </div>
-  <div class="profile-show">
-    <div class="profile-box-left">
-      <%= @user.name %>
-    </div>
-    <div class="profile-box-right">
-      <%= @user.introduction %>
-    </div>
+  <div class="profile-show-body">
+    <%= simple_format(@user.introduction) %>
   </div>
+  <div class="profile-show-action">
 <!--ログインしているユーザと一致し、かつゲストログインでなければ編集できる-->
-  <% if @user.id == current_user.id %>
-    <% if @user.name != "guestuser" %>
-      <%= link_to edit_user_path(current_user.id) do %>
-      プロフィールを編集
-      <% end %><br>
-    <% end %>
-  <% end %>
+      <% if @user.name != "guestuser" %>
+        <% if  @user.id == current_user.id %>
+        <div class="profile-edit-btn">
+          <%= link_to edit_user_path(current_user.id) do %>
+            <i class="fas fa-user-edit"></i> プロフィールを編集<br>
+          <% end %>
+        </div>
+        <div class="profile-edit-btn">
+          <%= link_to new_post_path do %>
+            <i class="fas fa-file"></i> 新規投稿<br>
+          <% end %>
+        </div>
 
-  <%= link_to "新規投稿", new_post_path %>
-  <%= link_to root_path do %>
-    トップへ戻る
-  <% end %>
+        <% else %>
+        <%= render "public/relationships/relationships_btn", user: @user %>
+        <% end %>
+      <% end %>
+  </div>
+
   <div class="profile-show">
     <% @user.posts.each do |post| %>
       <%= link_to post_path(post.id) do %>

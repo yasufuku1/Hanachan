@@ -245,21 +245,42 @@ body {
   flex-wrap: wrap;
   margin: 14px 0;
 }
-.profile-box-left {
+.profile-show .profile-box-left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
   flex-grow :2;
-  text-align: center;
   flex-basis: 40%;
 }
-.profile-box-right {
+.profile-show .profile-box-left span{
+  font-size: 1.0em;
+  margin-top: 2%;
+}
+.profile-show .profile-box-right {
   flex-grow :4;
   display: flex;
   justify-content: space-around;
   flex-basis: 60%;
   text-align: center;
 }
-.profile-favorite-item {
+.profile-show .profile-box-right .profile-favorite-item {
   color: #d73038;
   text-align: center;
+}
+.profile-show-body {
+  display: flex;
+  justify-content: flex-start;
+  margin: 14px 0 14px 10%;
+}
+.profile-show-action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 2% 0 2% 10%;
+}
+.profile-show-action .profile-edit-btn:last-child {
+  margin-left: 3%;
 }
 .profile-show:last-child {
   display: flex;
@@ -268,6 +289,24 @@ body {
   flex-wrap: wrap;
   margin: 14px 40px;
 }
+/* ---------------------------- */
+/* ----プロフィール編集ボタン---- */
+/* ---------------------------- */
+.profile-show-action .profile-edit-btn a {
+  background-color: #c0c0c0;
+  padding: 0.3em 0.9em;
+  text-align: center;
+	text-decoration: none;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  transition: .4s;
+  color: #fff;
+}
+.profile-show-action .profile-edit-btn a:hover {
+  color: #c0c0c0;
+  background-color: #fff;
+}
+
 /* ---------------------------- */
 /* ----プロフィール編集ページ---- */
 /* ---------------------------- */
@@ -560,7 +599,7 @@ body {
     top:20%;
   }
 }
-/*530以下スマホ対応*/
+/*531以下スマホ対応*/
 @media screen and (max-width:530px){
   /*topページ*/
   .top-main .main-box .top-font {
@@ -613,5 +652,12 @@ body {
   }
   .article-edit .delete-box {
     margin: 10px auto;
+  }
+  /*ユーザプロフィール詳細*/
+  .profile-show {
+    flex-direction: column;
+  }
+  .profile-show {
+    flex-direction: column;
   }
 }
