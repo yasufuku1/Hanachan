@@ -1,8 +1,9 @@
 <div class="main">
   <h2><span>フォロー中</span></h2>
-    <div class="relationships">
+    <%= render "public/users/user_search_lead" %>
+    <div class="user_index_box">
     <% @users.each do |user| %>
-    <div class="follower-user">
+    <div class="user-sec01">
       <div class="user-item">
         <%= image_tag user.get_profile_image(100, 100), style: "border-radius: 50%;" %>
       </div>

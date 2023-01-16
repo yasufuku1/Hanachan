@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       collection do
         patch "unsubscribe"=>"users#unsubscribe"
         patch "withdraw"=>"users#withdraw"
+        get "user_search"=>'users#search'
       end
     end
     resources :posts do

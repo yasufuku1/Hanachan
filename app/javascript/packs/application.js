@@ -15,6 +15,8 @@ import '@fortawesome/fontawesome-free/js/all'
 import "../stylesheets/application"
 import "../stylesheets/header_footer.css"
 import "../stylesheets/relationships.css"
+import "../stylesheets/posts.css"
+import "../stylesheets/users.css"
 import "../stylesheets/style.css"
 
 Rails.start()

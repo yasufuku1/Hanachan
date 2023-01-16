@@ -1,0 +1,209 @@
+/* ---------------------------- */
+/* ----プロフィール詳細ページ---- */
+/* ---------------------------- */
+.profile-show {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.profile-show .profile-box-left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  flex-grow :2;
+  flex-basis: 40%;
+}
+.profile-show .profile-box-left span{
+  font-size: 1.0em;
+  margin-top: 2%;
+}
+.profile-show .profile-box-right {
+  flex-grow :4;
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 60%;
+  text-align: center;
+}
+.profile-show .profile-box-right .profile-favorite-item {
+  color: #d73038;
+  text-align: center;
+}
+.profile-show-body {
+  display: flex;
+  justify-content: flex-start;
+  margin: 14px 0 14px 10%;
+}
+.profile-show-action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 2% 0 2% 10%;
+}
+.profile-show-action .profile-edit-btn:last-child {
+  margin-left: 3%;
+}
+.profile-show:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 14px 40px;
+}
+/* ---------------------------- */
+/* ----プロフィール編集ボタン---- */
+/* ---------------------------- */
+.profile-show-action .profile-edit-btn a {
+  background-color: #c0c0c0;
+  padding: 0.3em 0.9em;
+  text-align: center;
+	text-decoration: none;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  transition: .4s;
+  color: #fff;
+}
+.profile-show-action .profile-edit-btn a:hover {
+  color: #c0c0c0;
+  background-color: #fff;
+}
+
+/* ---------------------------- */
+/* ----プロフィール編集ページ---- */
+/* ---------------------------- */
+.field textarea {
+  width: 100%;
+  margin: 8px 0;
+	padding: 0.3em;
+	border: 1px solid #1b2538;
+	border-radius: 4px;
+	outline: none;
+	line-height: 1.8em;
+	font-size: 1.3em;
+	font-weight: 500;
+	height: 100px;
+}
+.field textarea:focus {
+	border-color: #da3c41;
+}
+/*退会ボタン用*/
+.button-box a {
+  width: 160px;
+  padding-left: 3.1em;
+  padding-right: 3.1em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #301bbe;
+	border-radius: 3px;
+	height: 45px;
+	background-color: #301bbe;
+	color: #fff;
+	margin: 0 36px;
+	font-size: 13px;
+}
+.button-box a:hover {
+  background-color: #fff;
+  color: #301bbe;
+}
+/* ---------------------------- */
+/* ----ユーザ退会ページ---- */
+/* ---------------------------- */
+.sec-01 {
+ text-align: center;
+ padding: 40px 0;
+}
+.sec-01 p {
+  margin: 30px 0 15px;
+  font-size: 20px;
+}
+.withdraw-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.sec-01 .withdraw-box .withdraw-left {
+  float: left;
+  padding: 10px 15px 10px 10px;
+}
+.sec-01 .withdraw-box .withdraw-right {
+  float: left;
+  padding: 10px 10px 10px 15px;
+}
+/*退会しないはマイページボタンと同じ色*/
+.sec-01 .withdraw-box .withdraw-left a {
+  width: 160px;
+  padding: 0.8em 3.0em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #ee8194;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #ee8194;
+	color: #fff;
+	font-size: 13px;
+}
+.sec-01 .withdraw-box .withdraw-left a:hover {
+	background-color: #fff;
+	color: #ee8194;
+}
+/*退会するは退会ボタン*/
+.sec-01 .withdraw-box .withdraw-right a {
+  width: 160px;
+  padding: 0.8em 3.0em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #301bbe;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #301bbe;
+	color: #fff;
+	font-size: 13px;
+}
+.sec-01 .withdraw-box .withdraw-right a:hover {
+	background-color: #fff;
+	color: #301bbe;
+}
+/* ---------------------------- */
+/* ----ユーザ検索フォーム、
+        ボタン---- */
+/* ---------------------------- */
+/*ユーザ検索ボックス*/
+.user_search {
+  margin: 50px auto;
+  padding: 0 20px;
+  display: flex;
+}
+.user_search .search {
+}
+.user_search .search input[type="text"] {
+  position: relative;
+  height: 33px;
+  width: 250px;
+  border-radius: 6px;
+  padding: 0 25px 0 10px;
+  border: 2px solid #000000;
+}
+.user_search .search .btn-search {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  right: 9px;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+}
+/* ---------------------------- */
+/* ----ユーザ検索フォーム、
+        ボタン---- */
+/* ---------------------------- */
+/*531以下スマホ対応*/
+@media screen and (max-width:530px){
+/*ユーザプロフィール詳細*/
+  .profile-show {
+    flex-direction: column;
+  }
+  .profile-show {
+    flex-direction: column;
+  }
+}

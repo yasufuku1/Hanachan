@@ -1,11 +1,16 @@
 <div class="main">
-  <h2><span>フォロワー一覧</span></h2>
-    <%= render "public/users/user_search_lead" %>
+  <h2><span>ユーザ検索</span></h2>
+    <div class="user_search">
+    <%= render "public/users/search_user" %>
+    </div>
     <div class="user_index_box">
+      <% if @users == nil %>
+        <p>検索結果がありません</p>
+        <% else %>
     <% @users.each do |user| %>
     <div class="user-sec01">
       <div class="user-item">
-      <%= image_tag user.get_profile_image(100, 100), style: "border-radius: 50%;" %>
+        <%= image_tag user.get_profile_image(100, 100), style: "border-radius: 50%;" %>
       </div>
       <div class="user-item">
         <%= user.name %>
@@ -16,6 +21,7 @@
         <% end %>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
