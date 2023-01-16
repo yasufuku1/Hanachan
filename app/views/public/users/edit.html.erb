@@ -1,7 +1,5 @@
 <div class="container">
   <h2><span>プロフィール編集</span></h2>
-  <p>ようこそ<%= current_user.name %>さん</p>
-  <%= render "layouts/errors", obj: @user %>
 
   <div class="box">
   <%= form_with model: @user, local:true do |f| %>
