@@ -14,15 +14,15 @@
 .user_index_box .user-sec01{
   display: flex;
   align-items: center;
-  padding: 0 0.8em 1.4em;
-  margin: 2em 0;
+  padding: 1.3em 0.8em;
+  margin: 0.6em auto;
   border-bottom: 2px solid #808080;
 }
 .user_index_box .user-sec01:last-child{
   display: flex;
   align-items: center;
-  padding: 0 0.8em;
-  margin: 2em 0;
+  padding: 1.3em 0.8em 0;
+  margin: 0.6em auto;
   border-bottom: none;
 }
 .user_index_box .user-sec01 .user-item:first-child{
@@ -30,12 +30,12 @@
   flex-basis: 35%;
   text-align: center;
 }
-.user_index_box .user-sec01 .user-item:nth-child(2){
+.user_index_box .user-sec01 .user-name-item {
   flex-grow :2;
   flex-basis: 35%;
   padding: 2.5em;
 }
-.user_index_box .user-sec01 .user-item:last-child{
+.user_index_box .user-sec01 .user-item:last-child {
   flex-grow : 2;
   flex-basis: 40%;
   text-align: center;
@@ -56,10 +56,13 @@
   background-color: #fff;
 }
 /* レスポンシブ対応 */
-/* 530以下*/
-@media screen and (max-width:530px){
+/* 553以下*/
+@media screen and (max-width:553px){
   /*記事投稿一覧*/
   .user_index_box .user-sec01{
     flex-wrap: wrap;
+  }
+  .user_index_box .user-sec01 .user-item .profile-follow-btn {
+    margin-top: 20px;
   }
 }

@@ -11,7 +11,7 @@ class Public::UsersController < ApplicationController
     end
 
     @user = User.find(params[:id])
-    @posts = Post.all
+    @posts = Post.where(user_id: @user.id).order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def edit
@@ -37,7 +37,13 @@ class Public::UsersController < ApplicationController
   end
 
   def search
-    @users = User.where.not(name: 'guestuser').search(params[:user_search])
+    search_users = User.where.not(name: 'guestuser').search(params[:user_search])
+    if search_users == nil
+      @users = search_users
+    else
+      @users = search_users.page(params[:page]).per(8)
+    end
+
   end
 
   private

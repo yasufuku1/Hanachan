@@ -44,7 +44,7 @@
 .profile-show-action .profile-edit-btn:last-child {
   margin-left: 3%;
 }
-.profile-show:last-child {
+.profile-show-post {
   display: flex;
   align-items: center;
   justify-content: center;
