@@ -259,9 +259,6 @@
 	background-color: #fff;
   color: #72c7e6;
 }
-.article-post-comments .comment-sec02 {
-  margin: .1em 1em;
-}
 .article-post-comments .comment-sec01 .comment-user .comment-user-name {
   padding-left: .5em;
 }
@@ -282,6 +279,7 @@
 }
 .article-post-comments .comment-sec02 {
   text-align: center;
+  margin: 1em;
 }
 .article-post-comments .comment-sec02 input[type="submit"] {
   width: 160px;
