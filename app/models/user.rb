@@ -35,6 +35,13 @@ class User < ApplicationRecord
     end
   end
 
+  def self.search(search)
+    if search != ""
+    User.where(['name LIKE?', "%#{search}%"])
+
+    end
+  end
+
   #ユーザをフォローする
   def follow(user_id)
     relationships.create(followed_id: user_id)

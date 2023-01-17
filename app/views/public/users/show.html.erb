@@ -31,30 +31,28 @@
   </div>
   <div class="profile-show-action">
 <!--ログインしているユーザと一致し、かつゲストログインでなければ編集できる-->
-      <% if @user.name != "guestuser" %>
-        <% if  @user.id == current_user.id %>
-        <div class="profile-edit-btn">
-          <%= link_to edit_user_path(current_user.id) do %>
-            <i class="fas fa-user-edit"></i> プロフィールを編集<br>
-          <% end %>
-        </div>
-        <div class="profile-edit-btn">
-          <%= link_to new_post_path do %>
-            <i class="fas fa-file"></i> 新規投稿<br>
-          <% end %>
-        </div>
-
-        <% else %>
-        <%= render "public/relationships/relationships_btn", user: @user %>
+    <% if @user.name != "guestuser" %>
+      <% if  @user.id == current_user.id %>
+      <div class="profile-edit-btn">
+        <%= link_to edit_user_path(current_user.id) do %>
+          <i class="fas fa-user-edit"></i> プロフィールを編集<br>
         <% end %>
+      </div>
+      <%= render "public/users/new_post_btn" %>
+      <% else %>
+      <%= render "public/relationships/relationships_btn", user: @user %>
       <% end %>
+    <% end %>
   </div>
 
-  <div class="profile-show">
-    <% @user.posts.each do |post| %>
+  <div class="profile-show-post">
+    <% @posts.each do |post| %>
       <%= link_to post_path(post.id) do %>
         <%= image_tag post.get_image(200,200) %>
       <% end %>
     <% end %>
+  </div>
+  <div class="kaminari">
+      <%= paginate @posts %>
   </div>
 </div>

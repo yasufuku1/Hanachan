@@ -3,35 +3,39 @@
   padding: 0;
   box-sizing: border-box;
 }
-/**/
-.relationships {
+/* ---------------------------- */
+/* ----ユーザ検索(users#search)、
+      フォロー一覧
+      フォロー一覧、---- */
+/* ---------------------------- */
+.user_index_box {
   margin: 40px auto;
 }
-.relationships .follower-user{
+.user_index_box .user-sec01{
   display: flex;
   align-items: center;
-  padding: 0 0.8em 1.4em;
-  margin: 2em 0;
+  padding: 1.3em 0.8em;
+  margin: 0.6em auto;
   border-bottom: 2px solid #808080;
 }
-.relationships .follower-user:last-child{
+.user_index_box .user-sec01:last-child{
   display: flex;
   align-items: center;
-  padding: 0 0.8em;
-  margin: 2em 0;
+  padding: 1.3em 0.8em 0;
+  margin: 0.6em auto;
   border-bottom: none;
 }
-.relationships .follower-user .user-item:first-child{
+.user_index_box .user-sec01 .user-item:first-child{
   flex-grow :1;
   flex-basis: 35%;
   text-align: center;
 }
-.relationships .follower-user .user-item:nth-child(2){
+.user_index_box .user-sec01 .user-name-item {
   flex-grow :2;
   flex-basis: 35%;
   padding: 2.5em;
 }
-.relationships .follower-user .user-item:last-child{
+.user_index_box .user-sec01 .user-item:last-child {
   flex-grow : 2;
   flex-basis: 40%;
   text-align: center;
@@ -52,10 +56,13 @@
   background-color: #fff;
 }
 /* レスポンシブ対応 */
-/* 530以下*/
-@media screen and (max-width:530px){
+/* 553以下*/
+@media screen and (max-width:553px){
   /*記事投稿一覧*/
-  .relationships .follower-user{
+  .user_index_box .user-sec01{
     flex-wrap: wrap;
+  }
+  .user_index_box .user-sec01 .user-item .profile-follow-btn {
+    margin-top: 20px;
   }
 }

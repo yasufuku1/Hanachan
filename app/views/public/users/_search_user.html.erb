@@ -1,0 +1,6 @@
+<%= form_with url: user_search_users_path, local: true, method: :get, class: "search" do |f| %>
+  <%= f.text_field :user_search, placeholder: ' ユーザを検索' %>
+  <%= button_tag type: :submit, class: "btn-search" do %>
+    <i class="fas fa-search fa-lg"></i>
+  <% end %>
+<% end %>
