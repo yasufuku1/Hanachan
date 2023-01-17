@@ -1,5 +1,14 @@
 <div class="photo-container">
   <h2><span>投稿一覧</span></h2>
+  <div class="index-btn-box">
+    <!--ログイン前ユーザにボタンは表示させない-->
+    <% if user_signed_in? %>
+      <%= render "public/users/user_search_lead" %>
+      <% if current_user.name != "guestuser" %>
+      <%= render "public/users/new_post_btn" %>
+      <% end %>
+    <% end %>
+  </div>
   <div class="photoGarelly">
     <% @posts.each do |post| %>
     <div class="items">

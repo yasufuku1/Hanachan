@@ -43,13 +43,14 @@
 /*フォロワー・フォローボタン*/
 .profile-follow-btn a {
   background-color: #c0c0c0;
-  padding: 0.3em 1.8em;
+  padding: 0.4em 1.8em;
   text-align: center;
 	text-decoration: none;
   border: 2px solid #c0c0c0;
   border-radius: 3px;
   transition: .4s;
   color: #fff;
+  font-size: 15px;
 }
 .profile-follow-btn a:hover {
   color: #c0c0c0;

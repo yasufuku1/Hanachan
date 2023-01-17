@@ -3,8 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  validates :name, presence: true, length: { minimum: 1, maximum: 26}
+  validates :name, presence: true, length: { minimum: 1, maximum: 26}, uniqueness: true # 重複していないか検証する
   validates :email, presence: true
 
   has_many :posts, dependent: :destroy
@@ -39,7 +38,6 @@ class User < ApplicationRecord
   def self.search(search)
     if search != ""
     User.where(['name LIKE?', "%#{search}%"])
-
     end
   end
 

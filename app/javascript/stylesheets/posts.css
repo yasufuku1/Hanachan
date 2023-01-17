@@ -34,7 +34,7 @@
 }
 .user_search_lead a {
   width: 160px;
-  padding: 0.8em 3.0em;
+  padding: 0.6em 2.7em;
   text-align: center;
 	text-decoration: none;
 	border: 2px solid #ee8194;
@@ -52,7 +52,7 @@
 .new-post-btn a {
   width: 160px;
   background-color: #c0c0c0;
-  padding: 0.8em 3.0em;
+  padding: 0.6em 2.7em;
   text-align: center;
 	text-decoration: none;
   border: 2px solid #c0c0c0;
@@ -111,6 +111,7 @@
   width: 97px;
   font-size: 0.9rem;
   margin-left: 0.1rem;
+  transition: .4s;
 }
 .photoGarelly .items .index-article .read-more p:last-child:hover {
   background: #fff;
@@ -179,12 +180,6 @@
   justify-content: space-evenly;
   margin: 0 auto;
 }
-.article .sec-02-right .article-edit {
-  height: 40px;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
-}
 .article .sec-02-right {
   display: block;
   flex-grow: 3;
@@ -214,6 +209,94 @@
 /*投稿記事へのコメント*/
 .article-post-comments {
   margin: 2em auto;
+}
+.article-post-comments .comment-title {
+  background: #72c7e6;
+  color: #fff;
+  border: none;
+  font-size: 1.2em;
+  padding: .2em 0 .2em .7em;
+}
+.article-post-comments .comment-count {
+  margin: 0.5em auto;
+}
+.article-post-comments .comment-count p{
+  font-size: 0.9em;
+  padding: .2em 0 .2em .7em;
+}
+.article-post-comments .comment-sec01 {
+  margin: 2em;
+}
+.article-post-comments .comment-sec01 .comment-user {
+  display: flex;
+  align-items: center;
+}
+.article-post-comments .comment-sec01 .comment-time {
+  margin: .3em .4em;
+}
+.article-post-comments .comment-sec01 .comment-body {
+  margin: .3em .4em;
+}
+.article-post-comments .comment-sec01 .comment-body p {
+  font-size: 0.9em;
+}
+.article-post-comments .comment-sec01 .comment-delete-btn {
+  margin: 1em .5em;
+  text-align: end;
+}
+.article-post-comments .comment-sec01 .comment-delete-btn a {
+  width: 160px;
+  padding: 0.3em 0.9em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #72c7e6;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #72c7e6;
+	color: #fff;
+}
+.article-post-comments .comment-sec01 .comment-delete-btn a:hover {
+	background-color: #fff;
+  color: #72c7e6;
+}
+.article-post-comments .comment-sec02 {
+  margin: .1em 1em;
+}
+.article-post-comments .comment-sec01 .comment-user .comment-user-name {
+  padding-left: .5em;
+}
+.article-post-comments .comment-sec02 textarea#post_comment_comment {
+  width: 100%;
+  margin: 8px 0;
+  padding: 0.3em;
+  border: 1px solid #1b2538;
+	border-radius: 4px;
+	outline: none;
+	line-height: 1.8em;
+	font-size: 1.3em;
+	font-weight: 500;
+	height: 100px;
+}
+.article-post-comments .comment-sec02 textarea#post_comment_comment:focus {
+  border-color: #da3c41;
+}
+.article-post-comments .comment-sec02 {
+  text-align: center;
+}
+.article-post-comments .comment-sec02 input[type="submit"] {
+  width: 160px;
+  padding: 0.8em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #72c7e6;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #72c7e6;
+	color: #fff;
+}
+.article-post-comments .comment-sec02 input[type="submit"]:hover {
+	background-color: #fff;
+  color: #72c7e6;
 }
 /* レスポンシブ対応 */
 /* 950以下821以上 */
