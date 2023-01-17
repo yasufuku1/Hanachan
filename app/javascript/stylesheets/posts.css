@@ -1,27 +1,6 @@
 /* ---------------------------- */
 /* ----投稿一覧ページ---- */
 /* ---------------------------- */
-/*ユーザ検索へ遷移するボックス*/
-.user_search_lead {
-  margin: 20px;
-  text-align: end;
-}
-.user_search_lead a {
-  width: 160px;
-  padding: 0.8em 3.0em;
-  text-align: center;
-	text-decoration: none;
-	border: 2px solid #ee8194;
-	border-radius: 3px;
-	transition: .4s;
-	background-color: #ee8194;
-	color: #fff;
-	font-size: 13px;
-}
-.user_search_lead a:hover {
-	background-color: #fff;
-	color: #ee8194;
-}
 .photo-container {
   padding: 40px 20px;
   margin: 0 auto;
@@ -42,6 +21,52 @@
   background-clip: text;
   color: transparent;
 }
+.index-btn-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 1em;
+}
+/*ユーザ検索へ遷移するボタン*/
+.user_search_lead {
+  margin: 20px;
+  text-align: end;
+}
+.user_search_lead a {
+  width: 160px;
+  padding: 0.8em 3.0em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #ee8194;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #ee8194;
+	color: #fff;
+	font-size: 13px;
+}
+.user_search_lead a:hover {
+	background-color: #fff;
+	color: #ee8194;
+}
+/*記事新規投稿へ遷移するボタン*/
+.new-post-btn a {
+  width: 160px;
+  background-color: #c0c0c0;
+  padding: 0.8em 3.0em;
+  text-align: center;
+	text-decoration: none;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  transition: .4s;
+  color: #fff;
+  font-size: 13px;
+}
+.new-post-btn a:hover {
+  color: #c0c0c0;
+  background-color: #fff;
+}
+/*ここまでボタン*/
+
 .photoGarelly {
   display: flex;
   flex-wrap: wrap;
@@ -211,7 +236,6 @@
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
   /*topページ*/
-
   .article-user {
     flex-direction: column;
   }
@@ -249,5 +273,12 @@
   }
   .article-edit .delete-box {
     margin: 10px auto;
+  }
+/*記事投稿一覧*/
+  .index-btn-box {
+    flex-direction: column;
+  }
+  .new-post-btn {
+    margin-top: 1em;
   }
 }
