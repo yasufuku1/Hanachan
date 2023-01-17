@@ -211,6 +211,10 @@
 .post-favorite .favorite_btn:nth-child(2) {
   color: #000000;
 }
+/*投稿記事へのコメント*/
+.article-post-comments {
+  margin: 2em auto;
+}
 /* レスポンシブ対応 */
 /* 950以下821以上 */
 @media screen and (max-width:950px){

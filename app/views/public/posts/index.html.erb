@@ -1,11 +1,5 @@
 <div class="photo-container">
   <h2><span>投稿一覧</span></h2>
-  <dic class="index-btn-box">
-      <%= render "public/users/user_search_lead" %>
-      <% if current_user.name != "guestuser" %>
-      <%= render "public/users/new_post_btn" %>
-      <% end %>
-  </dic>
   <div class="photoGarelly">
     <% @posts.each do |post| %>
     <div class="items">
@@ -17,7 +11,7 @@
 　    <span><%= post.body.truncate(25) %></span>
 　    <div class="read-more">
 　      <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
-　      <p><i class="far fa-comment"></i></p>
+　      <p><i class="far fa-comment"></i><%= post.post_comments.count %></p>
        　 <%= link_to post_path(post.id) do %>
        　    <p class="read-more">read more…</p>
          <% end %>

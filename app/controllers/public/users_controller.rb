@@ -36,16 +36,6 @@ class Public::UsersController < ApplicationController
     redirect_to root_path,notice: "退会が完了しました 。"
   end
 
-  def search
-    search_users = User.where.not(name: 'guestuser').search(params[:user_search])
-    if search_users == nil
-      @users = search_users
-    else
-      @users = search_users.page(params[:page]).per(8)
-    end
-
-  end
-
   private
 
   def user_params
