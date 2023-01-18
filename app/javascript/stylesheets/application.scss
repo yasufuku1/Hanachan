@@ -134,11 +134,10 @@ body {
   left: 32%;
   width: 30%;
   background: #FFFAF0;
-  opacity: 0.8;
-
+  font-family: 'Noto Serif JP', serif;
 }
 .top-main .main-box .top_image .top-font h2 {
-  font-size: 1.1rem;
+  font-size: 1.8em;
   padding: 0.1rem;
 }
 /*aboutページ*/
@@ -166,6 +165,7 @@ body {
   font-size: 2.0rem;
   letter-spacing: .17em;
   margin-bottom: 20px;
+  font-family: 'Noto Serif JP', serif;
 }
 .top-main .about-box h3 span {
   letter-spacing: .17em;
@@ -178,6 +178,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.2rem;
   text-align: center;
+  font-family: 'Noto Serif JP', serif;
 }
 /* ---------------------------- */
 /* ---- ログイン、
@@ -434,16 +435,16 @@ body {
   }
   /*topページ*/
   .top-main .main-box .top-font {
-    top:20%;
+    top: 20%;
   }
 }
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
   /*topページ*/
   .top-main .main-box .top-font {
-    top:17%;
-    left: 12%;
-    width: 67%;
+    top: 19%;
+    left: 14%;
+    width: 75%;
   }
   .button-box {
     display: block;
