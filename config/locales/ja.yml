@@ -11,5 +11,10 @@ ja:
         body: "投稿内容"
       post_comment:
         comment: "コメント"
+      admin:
+        email: "メールアドレス"
+        password: "パスワード"
+        remember_me: "次回から自動的にログイン"
+
 
 
