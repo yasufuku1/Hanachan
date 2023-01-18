@@ -1,0 +1,51 @@
+/* ---------------------------- */
+/* ---- ユーザ一覧---- */
+/* ---------------------------- */
+ .text-active span{
+  color : #3cb371;
+}
+　.text-invalid span{
+  color : #000000;
+}
+/* ---------------------------- */
+/* ---- ユーザ一詳細---- */
+/* --{-------------------------- */
+.a_profile-show{
+  margin: 14px auto;
+  display: flex;
+  flex-direction: column;
+}
+.a_profile-show .sec01{
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
+.a_profile-show .sec01 .a-profile-item-left {
+  margin-left: 1em;
+  font-size: 14px;
+  flex-basis: 30%;
+}
+.a_profile-show .sec01 .a-profile-item-right {
+}
+
+.a-profile-show-action {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 2em 5em;
+}
+/*ユーザ編集ボタン*/
+.a-profile-show-action .profile-edit-btn a {
+  background-color: #c0c0c0;
+  padding: 0.8em 3.0em;
+  text-align: center;
+	text-decoration: none;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  transition: .4s;
+  color: #fff;
+  font-size: 13px;
+}
+.a-profile-show-action .profile-edit-btn a:hover {
+  color: #c0c0c0;
+  background-color: #fff;
+}
