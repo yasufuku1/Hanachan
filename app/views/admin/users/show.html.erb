@@ -1,2 +1,48 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<div class="main">
+  <h2><span>ユーザ詳細</span></h2>
+  <div class="a_profile-show">
+    <div class="sec01">
+      <div class="a-profile-item-left">会員ID</div>
+      <div class="a-profile-item-right"><%= @user.id %></div>
+    </div>
+    <div class="sec01">
+      <div class="a-profile-item-left">ユーザアイコン</div>
+      <div class="a-profile-item-right">
+        <%= image_tag @user.get_profile_image(100, 100), style: "border-radius: 50%;" %>
+      </div>
+    </div>
+    <div class="sec01">
+      <div class="a-profile-item-left">メールアドレス</div>
+      <div class="a-profile-item-right"><%= @user.email %></div>
+    </div>
+    <div class="sec01">
+      <div class="a-profile-item-left">ユーザネーム</div>
+      <div class="a-profile-item-right"><%= @user.name %></div>
+    </div>
+    <div class="sec01">
+      <div class="a-profile-item-left">紹介文</div>
+      <div class="a-profile-item-right"><%= @user.introduction %></div>
+    </div>
+    <div class="sec01">
+      <div class="a-profile-item-left">会員ステータス</div>
+      <div class="a-profile-item-right">
+        <div class="user-item">
+          <% if @user.is_active? %>
+          <div class="text-active">
+            <span>有効</span>
+          </div>
+          <% else %>
+          <div class="text-invalid">
+            <span>退会済み</span>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="a-profile-show-action">
+    <div class="profile-edit-btn">
+      <%= link_to "編集する",edit_admin_user_path(@user) %>
+    </div>
+  </div>
+</div>

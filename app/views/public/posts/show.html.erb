@@ -1,5 +1,5 @@
 <div class="main">
-<h2><span>投稿詳細</span></h2>
+  <h2><span>投稿詳細</span></h2>
 
   <div class="article-user">
     <div class="article-box">
@@ -40,22 +40,28 @@
         </div>
       </div>
   </div>
-  <% if @post.favorited_by?(current_user) %>
-  <p class="post-favorite">
-    <%= link_to post_favorites_path(@post), method: :delete, class: "favorite_btn" do %>
-      <i class="fas fa-heart"></i><%= @post.favorites.count %>いいね
+  <% if current_user.name != "guestuser" %>
+    <% if @post.favorited_by?(current_user) %>
+    <p class="post-favorite">
+      <%= link_to post_favorites_path(@post), method: :delete, class: "favorite_btn" do %>
+        <i class="fas fa-heart"></i><%= @post.favorites.count %>いいね
+      <% end %>
+      <% else %>
+      <%= link_to post_favorites_path(@post), method: :post,class: "favorite_btn" do %>
+        <i class="far fa-heart"></i><%= @post.favorites.count %>いいね
+      <% end %>
+    </p>
     <% end %>
-    <% else %>
-    <%= link_to post_favorites_path(@post), method: :post,class: "favorite_btn" do %>
-      <i class="far fa-heart"></i><%= @post.favorites.count %>いいね
-    <% end %>
-  </p>
+  <% else %>
+    <p><i class="far fa-heart"></i><%= @post.favorites.count %></p>
   <% end %>
   <div class="article-post-comments">
   <%= render "public/post_comments/index", post: @post, post_comment: @post_comment %>
+  <% if current_user.name != "guestuser" %>
     <div class="comment-sec02">
     <%= render "public/post_comments/format", post: @post, post_comment: @post_comment %>
     </div>
+  <% end %>
   </div>
 </div>
 

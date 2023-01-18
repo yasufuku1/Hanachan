@@ -17,6 +17,8 @@ import "../stylesheets/header_footer.scss"
 import "../stylesheets/relationships.scss"
 import "../stylesheets/posts.scss"
 import "../stylesheets/users.scss"
+import "../stylesheets/admin/a_users.scss"
+
 
 Rails.start()
 Turbolinks.start()

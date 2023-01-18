@@ -5,6 +5,7 @@ ja:
     attributes:
       user:
         name: "名前"
+        is_active: "会員ステータス"
       post:
         image: "投稿写真"
         title: "タイトル"
