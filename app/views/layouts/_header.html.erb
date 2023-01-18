@@ -6,6 +6,11 @@
         <%= image_tag 'logo.png', size: "90x90" %>
       <% end %>
     </div>
+    <div class="log_current_user">
+      <% if user_signed_in? %>
+        <i class="fas fa-user"></i><br><%= current_user.name %>さん
+      <% end %>
+    </div>
 
     <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
     <input id="drawer_input" class="drawer_hidden" type="checkbox">

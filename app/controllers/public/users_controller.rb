@@ -1,7 +1,8 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit,:update,:withdraw]
+  before_action :ensure_correct_user, only: [:edit,:update]
   before_action :ensure_guest_user, only: [:edit]
+  before_action :ensure_active_user, only: [:show]
 
   def show
     # unsubscribeでリロードされた時の対策
@@ -33,7 +34,8 @@ class Public::UsersController < ApplicationController
   def withdraw
     @user = current_user
     @user.update(is_active: false)
-    redirect_to root_path,notice: "退会が完了しました 。"
+    reset_session
+    redirect_to root_path,notice: "退会が完了しました"
   end
 
   def search
@@ -63,6 +65,13 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.name == "guestuser"
       redirect_to user_path(current_user), alert: "ゲストユーザーはプロフィール編集画面へ遷移できません"
+    end
+  end
+
+  def ensure_active_user
+    @user = User.find_by(id: params[:id])
+    if @user.is_active == false
+      redirect_to root_path, alert: "退会済みのユーザです"
     end
   end
 end
