@@ -6,7 +6,7 @@ class Public::PostCommentsController < ApplicationController
     comment = current_user.post_comments.new(post_comment_params)
     comment.post_id = @post_comment.id
     if comment.save
-#      comment.create_notification_comment!(current_user, comment.id)
+      # comment.create_notification_comment!(current_user, comment.id)
       redirect_to post_path(@post_comment),notice: '投稿に成功しました'
     else
       redirect_to post_path(@post_comment), alert: 'コメントは4文字以上300文字以内で入力してください'
