@@ -16,6 +16,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post_comment = PostComment.new
   end
 
   def edit
@@ -64,7 +65,7 @@ class Public::PostsController < ApplicationController
   end
 
   def login_check_user
-    if current_user.nil?
+    unless user_signed_in?
       redirect_to posts_path, alert: "これより先のサービスはログインが必要となります"
     end
   end

@@ -5,19 +5,27 @@
 }
 /*ヘッダー*/
 header {
-    background-color: #eee;
-    text-align: center;
+  background-color: #eee;
+  text-align: center;
 }
 .header_a {
-    max-width: 1260px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    padding: 15px 30px 5px;
+  max-width: 1260px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px 30px 5px;
 }
 .header_a .log_header {
-    display: block;
+  display: block;
+}
+.header_a .log_current_user {
+  font-size: .9em;
+  font-weight: bold;
+  color: #696969;
+  padding-left: 1.8em;
+  overflow: hidden;
+  min-width: 140px;
 }
 /*ナビゲーション*/
 .area_nav_header {
@@ -111,7 +119,7 @@ footer {
     justify-content: center;
 }
 /*800以下ハンバーガーメニューになる*/
-@media screen and (max-width:800px){
+@media screen and (max-width:890px){
     /*ロゴと3本線は両端にする*/
     .header_a {
         justify-content: space-between;
@@ -133,6 +141,7 @@ footer {
     /*3本線出現*/
     .drawer_open {
         display: flex;
+        margin-left: auto;
     }
     /* アイコンがクリックされたらメニューを表示 */
     #drawer_input:checked ~ .area_nav_header {

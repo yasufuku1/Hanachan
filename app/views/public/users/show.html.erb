@@ -29,21 +29,24 @@
   <div class="profile-show-body">
     <%= simple_format(@user.introduction) %>
   </div>
-  <div class="profile-show-action">
-<!--ログインしているユーザと一致し、かつゲストログインでなければ編集できる-->
-    <% if @user.name != "guestuser" %>
-      <% if  @user.id == current_user.id %>
-      <div class="profile-edit-btn">
-        <%= link_to edit_user_path(current_user.id) do %>
-          <i class="fas fa-user-edit"></i> プロフィールを編集<br>
+  <% if current_user.name != "guestuser" %>
+    <div class="profile-show-action">
+<!--ゲストログインなく、かつログインしているユーザと一致していれば編集・新規投稿ができる-->
+      <% if @user.name != "guestuser" %>
+        <% if  @user.id == current_user.id %>
+          <div class="profile-edit-btn">
+            <%= link_to edit_user_path(current_user.id) do %>
+              <i class="fas fa-user-edit"></i> プロフィールを編集<br>
+            <% end %>
+          </div>
+          <%= render "public/users/new_post_btn" %>
+        <% else %>
+<!--ゲストログインなく、かつログインしているユーザと一致していないならフォローボタン-->
+        <%= render "public/relationships/relationships_btn", user: @user %>
         <% end %>
-      </div>
-      <%= render "public/users/new_post_btn" %>
-      <% else %>
-      <%= render "public/relationships/relationships_btn", user: @user %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="profile-show-post">
     <% @posts.each do |post| %>

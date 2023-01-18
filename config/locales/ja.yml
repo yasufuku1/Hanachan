@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      user:
+        name: "名前"
+      post:
+        image: "投稿写真"
+        title: "タイトル"
+        body: "投稿内容"
+      post_comment:
+        comment: "コメント"
+
+

@@ -13,11 +13,11 @@ import "channels"
 // import "bootstrap";
 import '@fortawesome/fontawesome-free/js/all'
 import "../stylesheets/application"
-import "../stylesheets/header_footer.css"
-import "../stylesheets/relationships.css"
-import "../stylesheets/posts.css"
-import "../stylesheets/users.css"
-import "../stylesheets/style.css"
+import "../stylesheets/header_footer.scss"
+import "../stylesheets/relationships.scss"
+import "../stylesheets/posts.scss"
+import "../stylesheets/users.scss"
+import "../stylesheets/style.scss"
 
 Rails.start()
 Turbolinks.start()

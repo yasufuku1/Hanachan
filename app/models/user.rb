@@ -3,12 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  validates :name, presence: true, length: { minimum: 1, maximum: 26}
+  validates :name, presence: true, length: { minimum: 1, maximum: 26}, uniqueness: true # 重複していないか検証する
   validates :email, presence: true
 
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :post_comments,dependent: :destroy
   # 自分がフォローする（与フォロー）側の関係性
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   # 自分がフォローしている人
@@ -38,7 +38,6 @@ class User < ApplicationRecord
   def self.search(search)
     if search != ""
     User.where(['name LIKE?', "%#{search}%"])
-
     end
   end
 
