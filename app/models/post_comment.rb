@@ -3,7 +3,7 @@ class PostComment < ApplicationRecord
   belongs_to :user
   # has_many :notifications, dependent: :destroy
 
-  validates :comment, presence: true, length: { minimum: 4, maximum: 300}
+  validates :comment, presence: true, length: { minimum: 1, maximum: 300}
 
   def save_notification_comment!(current_user, comment_id, visited_id)
     # コメントは複数回することが考えられるため、１つの投稿に複数回通知する

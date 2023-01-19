@@ -20,7 +20,7 @@ class Public::PostCommentsController < ApplicationController
       notification.save if notification.valid?
       redirect_to post_path(@post_comment),notice: '投稿に成功しました'
     else
-      redirect_to post_path(@post_comment), alert: 'コメントは4文字以上300文字以内で入力してください'
+      redirect_to post_path(@post_comment), alert: 'コメントは1文字以上300文字以内で入力してください'
     end
   end
 
