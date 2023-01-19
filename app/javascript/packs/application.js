@@ -14,9 +14,10 @@ import "channels"
 import '@fortawesome/fontawesome-free/js/all'
 import "../stylesheets/application"
 import "../stylesheets/header_footer.scss"
-import "../stylesheets/relationships.scss"
-import "../stylesheets/posts.scss"
-import "../stylesheets/users.scss"
+import "../stylesheets/public/relationships.scss"
+import "../stylesheets/public/posts.scss"
+import "../stylesheets/public/users.scss"
+import "../stylesheets/public/notifications.scss"
 import "../stylesheets/admin/a_users.scss"
 
 

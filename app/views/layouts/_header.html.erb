@@ -38,7 +38,11 @@
             <p class="nav-font">ログアウト</p>
           <% end %>
         </li>
-        <!--管理者側ログイン-->
+        <li class="nav-item">
+          <%= link_to notifications_path do %>
+            <p class="nav-font"><i class="fas fa-bell"></i></p>
+          <% end %>
+        </li>        <!--管理者側ログイン-->
         <% elsif admin_signed_in? %>
         <li class="nav-item">
           <%= link_to admin_users_path do %>

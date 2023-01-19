@@ -1,0 +1,27 @@
+.notification-box {
+  padding: 15px 20px;
+  margin: 0 auto;
+}
+.notice-table .notice-cel {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.notice-table .notice-cel .notice-sec01 {
+  display: flex;
+  align-items: center;
+}
+.notice-table .notice-cel .notice-sec01 .notice-user-link {
+  display: flex;
+  align-items: center;
+}
+.notice-table .notice-cel .notice-sec02 {
+  padding-left: 5px;
+}
+.notice-table .notice-cel .notice-sec03 p {
+  font-size: .9em;
+  margin: 0 3em
+}
+.notice-table .notice-cel .noticed-link {
+
+}
