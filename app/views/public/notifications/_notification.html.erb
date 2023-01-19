@@ -3,6 +3,8 @@
   <table class="notice-table">
     <tbody>
       <% unchecked_notifications.each do |notification| %>
+      <% if notification.action == "comment" %>
+      <!--actionによって表示を分岐させる-->
       <tr>
         <td class="notice-cel">
           <div class="notice-sec01">
@@ -11,16 +13,36 @@
               <%= notification.visitor.name %>
             <% end %>さんが
           </div>
-          <div class="notice-sec02"></div>
+          <div class="notice-sec02">
             あなたにコメントを送りました。
           </div>
           <div class="notice-sec03">
             <p><%= time_ago_in_words notification.created_at %>前</p>
           </div>
-            <%= link_to "既読にする", notification_path(notification.id),method: :put, class: "noticed-link" %>
+          <%= link_to "既読にする", notification_path(notification.id),method: :put, class: "noticed-link" %>
         <td>
       </tr>
       <% end %>
+      <% if notification.action == "like" %>
+      <tr>
+      <td class="notice-cel">
+        <div class="notice-sec01">
+          <%= link_to user_path(notification.visitor),class: "notice-user-link" do %>
+            <%= image_tag notification.visitor.get_profile_image(50, 50), style: "border-radius: 50%;" %>
+            <%= notification.visitor.name %>
+          <% end %>さんが
+        </div>
+        <div class="notice-sec02">
+          あなたにいいねを送りました。
+        </div>
+        <div class="notice-sec03">
+          <p><%= time_ago_in_words notification.created_at %>前</p>
+        </div>
+        <%= link_to "既読にする", notification_path(notification.id),method: :put, class: "noticed-link" %>
+        <td>
+      </tr>
+      <% end %>
+     <% end %>
     </tbody>
   </table>
 <% else %>
