@@ -1,0 +1,10 @@
+<% unchecked_notifications = notifications.where(checked: false) %>
+<% if unchecked_notifications.exists? %>
+  <% unchecked_notifications.each do |notification| %>
+    <%= notification.visitor.name %>さんが
+    <%= notification.visited.name %>さんにコメントを送りました。
+    <%= link_to "既読にする", notification_path(notification.id),method: :put %>
+  <% end %>
+<% else %>
+  <p>通知はありません</p>
+<% end %>

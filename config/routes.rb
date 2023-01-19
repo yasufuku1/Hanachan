@@ -30,7 +30,7 @@ Rails.application.routes.draw do
         get "search"=>'posts#search',as: 'search'
       end
     end
-    resources :notifications, only: :index
+    resources :notifications, only: [:index,:update]
   end
 
   # 管理者用
