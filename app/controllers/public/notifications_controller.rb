@@ -13,4 +13,12 @@ class Public::NotificationsController < ApplicationController
     redirect_to notifications_path
     end
   end
+
+  def update_all
+    # 全通知のcheckedをtrueにする
+    @notifications = current_user.passive_notifications
+    if @notifications.update_all(checked: true)
+    redirect_to notifications_path
+    end
+  end
 end

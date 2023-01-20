@@ -31,7 +31,8 @@ Rails.application.routes.draw do
       end
     end
     resources :notifications, only: [:index,:update]
-  end
+    patch 'notifications/all/update' => 'notifications#update_all', as: 'update_all_notifications'
+ end
 
   # 管理者用
   # URL /admin/sign_in ...

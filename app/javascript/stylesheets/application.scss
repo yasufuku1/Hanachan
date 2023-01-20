@@ -4,10 +4,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-size: border-box;
 }
 a {
   text-decoration: none;
+}
+p {
+  font-family: 'Noto Serif JP', serif;
 }
 /* ---------------------------- */
 /* ---- フラッシュメッセージ---- */
@@ -70,19 +73,23 @@ body {
   margin-bottom: 21px;
 }
 .main h2 span {
-  font-size: 27px;
+  font-size: 29px;
   font-weight: 700;
   background-image: linear-gradient(344deg, rgba(199,169,129,1) 0%, rgba(221,51,103,1) 96%);
   -webkit-background-clip:  text;
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-family: 'Noto Serif JP', serif;
 }
 /* ---------------------------- */
 /* ---- 　kaminari　　---- */
 /* ---------------------------- */
-.photo-container .kaminari {
+.kaminari {
   text-align: center;
+}
+.kaminari .pagination .page.current {
+
 }
 /* ---------------------------- */
 /* ----検索フォーム、ボタン---- */
@@ -159,6 +166,7 @@ body {
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-family: 'Noto Serif JP', serif;
 }
 .top-main .about-box h3 {
   text-align: center;

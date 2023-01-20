@@ -1,7 +1,14 @@
 <% unchecked_notifications = notifications.where(checked: false) %>
 <% if unchecked_notifications.exists? %>
   <table class="notice-table">
-    <tbody>
+  <thead>
+		<th class="update_all_noticed">
+		  <%= link_to update_all_notifications_path, method: :patch, class: "noticed-link" do %>
+  		  <i class="fas fa-trash"></i> 全削除
+		  <% end %>
+		</th>
+	</thead>
+	<tbody>
       <% unchecked_notifications.each do |notification| %>
       <!--actionによって表示を分岐させる-->
       <% if notification.action == "comment" %>
@@ -16,9 +23,10 @@
           <div class="notice-sec02">
             あなたにコメントを送りました。(<span><%= time_ago_in_words notification.created_at %>前</spanp>)
           </div>
-
           <div class="notice-sec03">
-            <%= link_to "既読にする", notification_path(notification.id),method: :put, class: "noticed-link" %>
+            <%= link_to notification_path(notification.id),method: :put, class: "noticed-link" do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
           </div>
         <td>
       </tr>
@@ -37,7 +45,9 @@
         </div>
 
         <div class="notice-sec03">
-          <%= link_to "既読にする", notification_path(notification.id),method: :put, class: "noticed-link" %>
+          <%= link_to notification_path(notification.id),method: :put, class: "noticed-link" do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
         </div>
         <td>
       </tr>
@@ -56,7 +66,9 @@
         </div>
 
         <div class="notice-sec03">
-          <%= link_to "既読にする", notification_path(notification.id),method: :put, class: "noticed-link" %>
+          <%= link_to notification_path(notification.id),method: :put, class: "noticed-link" do %>
+            <i class="fas fa-trash"></i>
+            <% end %>
         </div>
         <td>
       </tr>
