@@ -30,8 +30,9 @@ Rails.application.routes.draw do
         get "search"=>'posts#search',as: 'search'
       end
     end
-    resources :notifications, only: :index
-  end
+    resources :notifications, only: [:index,:update]
+    patch 'notifications/all/update' => 'notifications#update_all', as: 'update_all_notifications'
+ end
 
   # 管理者用
   # URL /admin/sign_in ...

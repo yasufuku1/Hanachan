@@ -9,3 +9,8 @@ Admin.create!(
   email: "a@a",
   password: "aaaaaa"
 )
+User.create!([
+    { name: 'test1', email: 'test@test', password: 'testtest' },
+    { name: 'test2', email: 'test1@test', password: 'testtest' },
+    { name: 'test3', email: 'test2@test', password: 'testtest' },
+    ])

@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   validates :image, presence: true
   validates :title, presence: true, length: { minimum: 1, maximum: 50 }
@@ -26,4 +27,5 @@ class Post < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
+
 end
