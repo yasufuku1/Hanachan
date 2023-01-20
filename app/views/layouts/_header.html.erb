@@ -11,13 +11,8 @@
         <i class="fas fa-user"></i><br><%= current_user.name %>さん
       <% end %>
     </div>
-
-    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
-    <input id="drawer_input" class="drawer_hidden" type="checkbox">
-
-    <!-- ハンバーガーアイコン -->
-    <label for="drawer_input" class="drawer_open"><span></span></label>
-
+    <!--ハンバーガアイコンー-->
+    <div class="openbtn"><span></span><span></span><span></span></div>
     <!---ナビゲーション->-->
     <nav class="area_nav_header">
       <ul class="list_nav_header">
@@ -80,3 +75,13 @@
     </nav>
   </div>
 </header>
+<script>
+$(".openbtn").click(function () {
+    $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
+    $(".area_nav_header").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+});
+$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+    $(".area_nav_header").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+});
+</script>
