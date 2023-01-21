@@ -1,0 +1,34 @@
+<div class="main">
+  <h2><span>ユーザ覧</span></h2>
+  <div class="user_index_box">
+    <% @users.each do |user| %>
+    <div class="user-sec01">
+      <div class="user-item">
+      <%= link_to admin_user_path(user) do %>
+        <%= image_tag user.get_profile_image(100, 100), style: "border-radius: 50%;" %>
+      </div>
+      <div class="user-name-item">
+        <%= user.name %>
+      <% end %>
+      </div>
+      <div class="user-item">
+        <% if user.is_active? %>
+        <div class="text-active">
+          <span>有効</span>
+        </div>
+        <% else %>
+        <div class="text-invalid">
+          <span>退会済み</span>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    </div>
+    <% unless @users == nil %>
+    <div class="kaminari">
+        <%= paginate @users %>
+    </div>
+    <% end %>
+  </div>
+</div>

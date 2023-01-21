@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*ヘッダー*/
+header {
+  background-color: #eee;
+  text-align: center;
+}
+.header_a {
+  max-width: 1260px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px 30px 5px;
+}
+.header_a .log_header {
+  display: block;
+}
+.header_a .log_current_user {
+  font-size: .9em;
+  font-weight: bold;
+  color: #696969;
+  padding-left: 1.8em;
+  overflow: hidden;
+  min-width: 140px;
+  margin-right: auto; /*ログインユーザはロゴの隣に配置*/
+  font-family: 'Noto Serif JP', serif;
+}
+/*ナビゲーション*/
+.area_nav_header {
+  margin-left: auto;
+}
+.area_nav_header .list_nav_header {
+  display: flex;
+  justify-content: center;
+}
+.area_nav_header .list_nav_header .nav-item {
+  list-style: none;
+  padding-right: 15px;
+}
+.area_nav_header .list_nav_header .nav-item .nav-font {
+  font-size: 15px;
+  font-weight: bold;
+  color: #696969;
+  font-family: 'Noto Serif JP', serif;
+}
+/*========= ボタンのためのCSS ===============*/
+/* ハンバーガーアイコンの設置スペース */
+.openbtn{
+  display: none;
+	position: fixed;
+  z-index: 9999;/*ボタンを最前面に*/
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+/*×に変化*/
+.openbtn span{
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #666;
+  width: 47%;
+}
+.openbtn span:nth-of-type(1) {
+	top: 15px;
+}
+
+.openbtn span:nth-of-type(2) {
+	top: 23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top: 31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 37%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 37%;
+}
+/*800以下ハンバーガーメニューになる*/
+@media screen and (max-width:890px){
+    /*ロゴと3本線は両端にする*/
+    .header_a {
+        justify-content: space-between;
+    }
+    .area_nav_header {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: -120%; /* メニューを画面の外に飛ばす */
+      z-index: 99;
+      background: #000000;
+      opacity: 0.9;
+      transition: .5s;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+    /*×が押されたら右から左へスライド*/
+    .area_nav_header.panelactive {
+      right: 0;
+    }
+    .area_nav_header .list_nav_header {
+      display: flex;
+      flex-direction: column;
+    }
+    .area_nav_header .list_nav_header .nav-item {
+      /*ナビの数が増えた場合縦スクロール*/
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 20px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .area_nav_header .list_nav_header .nav-item .nav-font {
+      color: #fff;
+      font-size: 18px;
+    }
+    /*3本線出現*/
+    .openbtn {
+      display: flex;
+      margin-left: auto;
+    }
+}

@@ -1,0 +1,61 @@
+<div class="main">
+  <h2><span>マイページ</span></h2>
+  <div class="profile-show">
+    <div class="profile-box-left">
+      <%= image_tag @user.get_profile_image(90,90), style: "border-radius: 50%;", class: "profile-img" %>
+      <span><%= @user.name %></span>
+    </div>
+    <div class="profile-box-right">
+      <div class="profile-item">
+        <%= link_to user_followers_path(@user) do %>
+          <%= @user.followers.count %><br>フォロワー
+        <% end %>
+      </div>
+      <div class="profile-item">
+        <%= link_to user_followings_path(@user) do %>
+          <%= @user.followings.count %><br>フォロー中
+        <% end %>
+      </div>
+      <% if current_user == @user %>
+      <%= link_to user_favorites_path(@user) do %>
+        <div class="profile-favorite-item">
+          <i class="far fa-heart"></i> <%= @user.favorites.count %><br>
+          お気に入り
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="profile-show-body">
+    <%= simple_format(@user.introduction) %>
+  </div>
+  <% if current_user.name != "guestuser" %>
+    <div class="profile-show-action">
+<!--ゲストログインなく、かつログインしているユーザと一致していれば編集・新規投稿ができる-->
+      <% if @user.name != "guestuser" %>
+        <% if  @user.id == current_user.id %>
+          <div class="profile-edit-btn">
+            <%= link_to edit_user_path(current_user.id) do %>
+              <i class="fas fa-user-edit"></i> プロフィールを編集<br>
+            <% end %>
+          </div>
+          <%= render "public/users/new_post_btn" %>
+        <% else %>
+<!--ゲストログインなく、かつログインしているユーザと一致していないならフォローボタン-->
+        <%= render "public/relationships/relationships_btn", user: @user %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="profile-show-post">
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.get_image(200,200) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="kaminari">
+      <%= paginate @posts %>
+  </div>
+</div>

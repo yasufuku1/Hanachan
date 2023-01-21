@@ -1,0 +1,36 @@
+<div class="photo-container">
+  <h2><span>投稿一覧</span></h2>
+  <div class="index-btn-box">
+    <!--ログイン前ユーザにボタンは表示させない-->
+    <% if user_signed_in? %>
+      <%= render "public/users/user_search_lead" %>
+      <% if current_user.name != "guestuser" %>
+      <%= render "public/users/new_post_btn" %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="photoGarelly">
+    <% @posts.each do |post| %>
+    <div class="items">
+      <%= image_tag post.get_image(120, 120), class: "post-img" %>
+　　  <div class="index-article">
+      <p class="title-font">
+          <%= post.title.truncate(11) %>
+      </p>
+　    <span><%= post.body.truncate(25) %></span>
+　    <div class="read-more">
+　      <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
+　      <p><i class="far fa-comment"></i><%= post.post_comments.count %></p>
+       　 <%= link_to post_path(post.id) do %>
+       　    <p class="read-more">read more…</p>
+         <% end %>
+      </div>
+   　  </div>
+　　</div>
+    <% end %>
+  </div>
+  <div class="kaminari">
+      <%= paginate @posts %>
+  </div>
+</div>
+
