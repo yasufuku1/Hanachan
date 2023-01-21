@@ -15,6 +15,6 @@
 #     { name: 'test3', email: 'test2@test', password: 'testtest' },
 #     ])
 Admin.create!(
-  email: "ENV['ADMIN_EMAIL']",
-  password: "ENV['ADMIN_PASSWORD']"
+  email: ENV['ADMIN_EMAIL'],
+  password: ENV['ADMIN_PASSWORD']
 )
