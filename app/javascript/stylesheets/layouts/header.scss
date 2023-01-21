@@ -100,42 +100,6 @@ header {
   transform: translateY(-6px) rotate(45deg);
   width: 37%;
 }
-/*フッター*/
-html.fontawesome-i2svg-active.fontawesome-i2svg-complete {
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 100px;
-  box-sizing: border-box;
-}
-.footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-}
-.footer .page-top a {
-  background:#cd5c5c;
-  color:#fff;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  padding:20px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.8rem;
-  transition: all 0.3s;
-}
-.footer .page-top a:hover {
-  background: #777;
-}
-.footer .footer_a {
-  background-color: #eee;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 /*800以下ハンバーガーメニューになる*/
 @media screen and (max-width:890px){
     /*ロゴと3本線は両端にする*/
@@ -150,7 +114,7 @@ html.fontawesome-i2svg-active.fontawesome-i2svg-complete {
       right: -120%; /* メニューを画面の外に飛ばす */
       z-index: 99;
       background: #000000;
-      opacity: 0.87;
+      opacity: 0.9;
       transition: .5s;
       display: flex;
       justify-content: space-around;
