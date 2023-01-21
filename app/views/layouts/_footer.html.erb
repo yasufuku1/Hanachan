@@ -1,15 +1,12 @@
 <footer class="footer">
   <p class="page-top"><a href="#">Page Top</a></p>
   <div class="footer_a">
-    <small>Hanachan 2023 / All right reserved.</small>
+    <small>
+      <span>Hanachan 2023 / All right reserved.</span>
+    </small>
+      |
+      <span><a href="#"><i class="fab fa-twitter-square"></i></a></span>
+      |
+      <span><a href="#"><i class="fab fa-instagram-square"></i></a></span>
   </div>
 </footer>
-<script>
-  // #page-topをクリックした際の設定
-$('.footer .page-top').click(function () {
-    $('body,html').animate({
-        scrollTop: 0//ページトップまでスクロール
-    }, 500);//ページトップスクロールの速さ。数字が大きいほど遅くなる
-    return false;//リンク自体の無効化
-});
-</script>
