@@ -1,10 +1,35 @@
 /* ---------------------------- */
+/* ---- 管理者トップページ---- */
+/* ---------------------------- */
+.admin-homes {
+  text-align: center;
+}
+.admin-homes .admin-homes-font {
+  text-align: center;
+  margin-bottom: 2em;
+}
+/*管理者ログインボタン*/
+.admin-homes .admin-session-btn a {
+  background-color: #ee8194;
+  padding: 0.7em 3.0em;
+  text-align: center;
+  border: 2px solid #ee8194;
+  border-radius: 3px;
+  transition: .4s;
+  color: #fff;
+  font-size: 13px;
+}
+.admin-homes .admin-session-btn a:hover {
+  color: #ee8194;
+  background-color: #fff;
+}
+/* ---------------------------- */
 /* ---- ユーザ一覧---- */
 /* ---------------------------- */
- .text-active span{
+.text-active span{
   color : #3cb371;
 }
-　.text-invalid span{
+.text-invalid span{
   color : #000000;
 }
 /* ---------------------------- */
@@ -24,10 +49,11 @@
   margin-left: 1em;
   font-size: 14px;
   flex-basis: 30%;
+  font-family: 'Noto Serif JP', serif;
 }
 .a_profile-show .sec01 .a-profile-item-right {
+  font-family: 'Noto Serif JP', serif;
 }
-
 .a-profile-show-action {
   display: flex;
   justify-content: center;
@@ -38,7 +64,6 @@
   background-color: #c0c0c0;
   padding: 0.8em 3.0em;
   text-align: center;
-	text-decoration: none;
   border: 2px solid #c0c0c0;
   border-radius: 3px;
   transition: .4s;
