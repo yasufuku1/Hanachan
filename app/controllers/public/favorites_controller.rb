@@ -13,7 +13,7 @@ class Public::FavoritesController < ApplicationController
     post = Post.find(params[:post_id])
     favorite = current_user.favorites.find_by(post_id: post.id)
     favorite.destroy
-    Notification.find_by(post_id: post.id).destroy
+    Notification.find_by(visitor_id: current_user.id,visited_id: post.user_id,post_id: post.id,action: 'like').destroy
     redirect_to post_path(post)
   end
 

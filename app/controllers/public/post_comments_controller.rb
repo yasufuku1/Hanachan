@@ -8,15 +8,14 @@ class Public::PostCommentsController < ApplicationController
     if comment.save
       new_post_comment = PostComment.where(id: comment.id).where.not(user_id: current_user.id)
       notification = current_user.active_notifications.new(
-        visitor_id: current_user.id,
         visited_id: @post_comment.user_id,
         post_id: comment.post_id,
         action: 'comment',
         comment_id: comment.id
         )
-    if notification.visitor_id == notification.visited_id
-        notification.checked = true
-    end
+      if notification.visitor_id == notification.visited_id
+          notification.checked = true
+      end
       notification.save if notification.valid?
       redirect_to post_path(@post_comment),notice: '投稿に成功しました'
     else
@@ -25,7 +24,8 @@ class Public::PostCommentsController < ApplicationController
   end
 
   def destroy
-    Notification.find_by(comment_id: params[:id]).destroy
+    @post_comment = Post.find(params[:post_id])
+    Notification.find_by(visitor_id: current_user.id,visited_id: @post_comment.user_id,post_id: @post_comment.id,action: 'comment',comment_id: params[:id]).destroy
     PostComment.find(params[:id]).destroy
     redirect_to post_path(params[:post_id]), notice: '投稿を削除しました'
   end
