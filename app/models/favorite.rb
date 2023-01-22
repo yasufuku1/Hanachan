@@ -9,15 +9,15 @@ class Favorite < ApplicationRecord
    # ない場合いいねの通知作成
       if temp_id.blank?
          notification = current_user.active_notifications.new(
-            post_id: post.id,
             visited_id: post.user_id,
+            post_id: post.id,
             action: 'like'
          )
-      end
       # 自分の投稿に対するいいねの場合は、通知済みとする
       if notification.visitor_id == notification.visited_id
          notification.checked = true
       end
       notification.save if notification.valid?
+      end
    end
 end

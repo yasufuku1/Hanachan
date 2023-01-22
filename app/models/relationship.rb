@@ -11,7 +11,7 @@ class Relationship < ApplicationRecord
         visited_id: followed_id,
         action: 'follow'
       )
-    end
     notification.save if notification.valid?
+    end
   end
 end
