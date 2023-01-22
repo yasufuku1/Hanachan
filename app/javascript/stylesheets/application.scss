@@ -8,8 +8,9 @@
 }
 a {
   text-decoration: none;
+  font-family: 'Noto Serif JP', serif;
 }
-p {
+p, h1, h2, h3, span {
   font-family: 'Noto Serif JP', serif;
 }
 /* ---------------------------- */
@@ -80,16 +81,12 @@ body {
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-family: 'Noto Serif JP', serif;
 }
 /* ---------------------------- */
 /* ---- 　kaminari　　---- */
 /* ---------------------------- */
 .kaminari {
   text-align: center;
-}
-.kaminari .pagination .page.current {
-
 }
 /* ---------------------------- */
 /* ----検索フォーム、ボタン---- */
@@ -138,10 +135,9 @@ body {
 .top-main .main-box .top-font {
   position: absolute;
   top: 25%;
-  left: 32%;
+  left: 34%;
   width: 30%;
   background: #FFFAF0;
-  font-family: 'Noto Serif JP', serif;
 }
 .top-main .main-box .top_image .top-font h2 {
   font-size: 1.8em;
@@ -166,14 +162,12 @@ body {
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-family: 'Noto Serif JP', serif;
 }
 .top-main .about-box h3 {
   text-align: center;
   font-size: 2.0rem;
   letter-spacing: .17em;
   margin-bottom: 20px;
-  font-family: 'Noto Serif JP', serif;
 }
 .top-main .about-box h3 span {
   letter-spacing: .17em;
@@ -186,7 +180,6 @@ body {
   font-size: 1.2rem;
   line-height: 1.2rem;
   text-align: center;
-  font-family: 'Noto Serif JP', serif;
 }
 /* ---------------------------- */
 /* ---- ログイン、
@@ -203,9 +196,10 @@ body {
 }
 .field label {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   padding-left: 2px;
   padding-bottom: 2px;
+  font-family: 'Noto Serif JP', serif;
 }
 ::placeholder{
   color: #ccc;
@@ -222,6 +216,7 @@ body {
 	border-radius: 4px;
 	outline: none;
 	line-height: 2.0em;
+	font-family: 'Noto Serif JP', serif;
 }
 .field input[type="text"]:focus,
 .field input[type="email"]:focus,
@@ -243,6 +238,7 @@ body {
 	transition: .4s;
 	background-color: #ee8194;
 	color: #fff;
+	font-family: 'Noto Serif JP', serif;
 }
 .button-box input[type="submit"]:hover {
 	background-color: #fff;
@@ -262,7 +258,7 @@ body {
   align-items: center;
   flex-direction: column;
   align-items: center;
-  flex-grow :2;
+  flex-grow: 2;
   flex-basis: 40%;
 }
 .profile-show .profile-box-left span{
@@ -270,7 +266,7 @@ body {
   margin-top: 2%;
 }
 .profile-show .profile-box-right {
-  flex-grow :4;
+  flex-grow: 4;
   display: flex;
   justify-content: space-around;
   flex-basis: 60%;
@@ -319,7 +315,6 @@ body {
   color: #c0c0c0;
   background-color: #fff;
 }
-
 /* ---------------------------- */
 /* ----プロフィール編集ページ---- */
 /* ---------------------------- */
@@ -428,7 +423,10 @@ body {
 @media screen and (max-width:821px){
   /*topページ*/
   .top-main .main-box .top-font {
-    top:22%;
+    top: 22%;
+  }
+  .top-main .main-box .top_image .top-font h2 {
+    font-size: 1.4em;
   }
   /*記事投稿一覧*/
   .photoGarelly .items {
@@ -453,6 +451,9 @@ body {
     top: 19%;
     left: 14%;
     width: 75%;
+  }
+  .top-main .main-box .top_image .top-font h2 {
+    font-size: 1.3em;
   }
   .button-box {
     display: block;
