@@ -9,7 +9,7 @@ class Public::RelationshipsController < ApplicationController
 
   def destroy
     current_user.unfollow(params[:user_id])
-    Notification.find_by(visitor_id: current_user.id, visited_id: params[:user_id]).destroy
+    Notification.find_by(visitor_id: current_user.id, visited_id: params[:user_id],action: 'follow').destroy
     redirect_to request.referer
   end
   def followings
