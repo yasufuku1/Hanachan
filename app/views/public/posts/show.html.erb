@@ -1,6 +1,5 @@
 <div class="main">
   <h2><span>投稿詳細</span></h2>
-
   <div class="article-user">
     <div class="article-box">
       <%= link_to user_path(@post.user_id) do %>
@@ -20,7 +19,8 @@
       </div>
       <div class="delete-box">
       <%= link_to post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "delete-font" do %>
-        投稿を削除<i class="fas fa-trash-alt"></i>
+        投稿を削除
+        <i class="fas fa-trash-alt"></i>
       <% end %>
       </div>
     <% end %>
