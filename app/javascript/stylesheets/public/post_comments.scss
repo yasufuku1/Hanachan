@@ -21,16 +21,26 @@
 }
 .article-post-comments .comment-sec01 .comment-user {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .article-post-comments .comment-sec01 .comment-time {
   margin: .3em .4em;
   font-family: 'Noto Serif JP', serif;
 }
-.article-post-comments .comment-sec01 .comment-body {
-  margin: .3em .4em;
+.article-post-comments .comment-sec01  .comment-body {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
 }
-.article-post-comments .comment-sec01 .comment-body p {
+.article-post-comments .comment-sec01  .comment-body p {
   font-size: 0.9em;
 }
 .article-post-comments .comment-sec01 .comment-delete-btn {
