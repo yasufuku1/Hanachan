@@ -1,0 +1,104 @@
+/*投稿記事へのコメント*/
+.article-post-comments {
+  margin: 2em auto;
+}
+.article-post-comments .comment-title {
+  background: #72c7e6;
+  color: #fff;
+  border: none;
+  font-size: 1.2em;
+  padding: .2em 0 .2em .7em;
+}
+.article-post-comments .comment-count {
+  margin: 0.5em auto;
+}
+.article-post-comments .comment-count p{
+  font-size: 0.9em;
+  padding: .2em 0 .2em .7em;
+}
+.article-post-comments .comment-sec01 {
+  margin: 2em;
+}
+.article-post-comments .comment-sec01 .comment-user {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.article-post-comments .comment-sec01 .comment-time {
+  margin: .3em .4em;
+  font-family: 'Noto Serif JP', serif;
+}
+.article-post-comments .comment-sec01  .comment-body {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+.article-post-comments .comment-sec01  .comment-body p {
+  font-size: 0.9em;
+}
+.article-post-comments .comment-sec01 .comment-delete-btn {
+  margin: 1em .5em;
+  text-align: end;
+}
+.article-post-comments .comment-sec01 .comment-delete-btn a {
+  width: 160px;
+  padding: 0.3em 0.9em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #72c7e6;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #72c7e6;
+	color: #fff;
+	font-family: 'Noto Serif JP', serif;
+}
+.article-post-comments .comment-sec01 .comment-delete-btn a:hover {
+	background-color: #fff;
+  color: #72c7e6;
+}
+.article-post-comments .comment-sec01 .comment-user .comment-user-name {
+  padding-left: .5em;
+}
+.article-post-comments .comment-sec02 textarea#post_comment_comment {
+  width: 100%;
+  margin: 8px 0;
+  padding: 0.3em;
+  border: 1px solid #1b2538;
+	border-radius: 4px;
+	outline: none;
+	line-height: 1.8em;
+	font-size: 1.0em;
+	font-weight: 400;
+	height: 100px;
+	font-family: 'Noto Serif JP', serif;
+}
+.article-post-comments .comment-sec02 textarea#post_comment_comment:focus {
+  border-color: #da3c41;
+}
+.article-post-comments .comment-sec02 {
+  text-align: center;
+  margin: 1em;
+}
+.article-post-comments .comment-sec02 input[type="submit"] {
+  width: 160px;
+  padding: 0.8em;
+  text-align: center;
+	text-decoration: none;
+	border: 2px solid #72c7e6;
+	border-radius: 3px;
+	transition: .4s;
+	background-color: #72c7e6;
+	color: #fff;
+	font-family: 'Noto Serif JP', serif;
+}
+.article-post-comments .comment-sec02 input[type="submit"]:hover {
+	background-color: #fff;
+  color: #72c7e6;
+}

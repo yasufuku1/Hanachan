@@ -1,9 +1,9 @@
 <div class="photo-container">
   <h2><span>お気に入り一覧</span></h2>
   <% if @posts.count == 0 %>
-    <p>現在、あなたがいいねをした記事はありません</p>
+    <p class="favorite-count-font">現在、あなたがいいねをした記事はありません</p>
   <% else %>
-    あなたがいいねをした記事：<%= @posts.count %>件
+    <p class="favorite-count-font">あなたがいいねをした記事：<%= @posts.count %>件</p>
   <% end %>
   <div class="photoGarelly">
     <% @posts.each do |post| %>

@@ -6,6 +6,9 @@
   padding: 0;
   box-size: border-box;
 }
+li {
+  list-style: none;
+}
 a {
   text-decoration: none;
   font-family: 'Noto Serif JP', serif;
@@ -83,10 +86,58 @@ body {
   color: transparent;
 }
 /* ---------------------------- */
-/* ---- 　kaminari　　---- */
+/* ---- 　pagination　　---- */
 /* ---------------------------- */
 .kaminari {
   text-align: center;
+}
+.pagination span.page.current {
+  color: #696969;   /*文字の色を変える*/
+  padding: 0 .2em;
+  margin: 0 .4em;
+}
+.pagination span.first a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+.pagination span.prev a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+.pagination span.next a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+.pagination span.last a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+/* 表示しているページ番号のデザイン */
+.pagination span.page a {
+  margin: 0 .4em;
+  color: #696969;
+  padding: 0 .2em;
+  transition: .4s;
+}
+/*ホバー時のデザイン*/
+.pagination span.page a:hover {
+  color: #93c9ff;
+}
+.pagination span.first a:hover {
+  color: #93c9ff;
+}
+.pagination span.prev a:hover {
+  color: #93c9ff;
+}
+.pagination span.next a:hover {
+  color: #93c9ff;
+}
+.pagination span.last a:hover {
+  color: #93c9ff;
 }
 /* ---------------------------- */
 /* ----検索フォーム、ボタン---- */
@@ -114,72 +165,6 @@ body {
   background: #fff;
   border: none;
   border-radius: 6px;
-}
-/* ---------------------------- */
-/* ---- topページ---- */
-/* ---------------------------- */
-/*topページ*/
-.top-main {
-
-}
-.top-main .main-box {
-  text-align: center;
-}
-.top-main .main-box .top_image {
-}
-.top-main .main-box .top_image img {
-  opacity: 0.6;
-  position: relative;
-
-}
-.top-main .main-box .top-font {
-  position: absolute;
-  top: 25%;
-  left: 34%;
-  width: 30%;
-  background: #FFFAF0;
-}
-.top-main .main-box .top_image .top-font h2 {
-  font-size: 1.8em;
-  padding: 0.1rem;
-}
-/*aboutページ*/
-.top-main .about-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 70px 50px;
-}
-.top-main .about-box h2 {
-  font-size: 3.0rem;
-  letter-spacing: .17em;
-  margin-bottom: 70px;
-}
-.top-main .about-box h2 span {
-  font-weight: 700;
-  background-image: linear-gradient(344deg, rgba(199,169,129,1) 0%, rgba(221,51,103,1) 96%);
-  -webkit-background-clip:  text;
-  -moz-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.top-main .about-box h3 {
-  text-align: center;
-  font-size: 2.0rem;
-  letter-spacing: .17em;
-  margin-bottom: 20px;
-}
-.top-main .about-box h3 span {
-  letter-spacing: .17em;
-  line-height: 2rem;
-}
-.top-main .about-box p {
-  letter-spacing: .17em;
-  font-weight: 500;
-  padding: 20px;
-  font-size: 1.2rem;
-  line-height: 1.2rem;
-  text-align: center;
 }
 /* ---------------------------- */
 /* ---- ログイン、
@@ -424,13 +409,6 @@ body {
 }
 /* 821以下以上 */
 @media screen and (max-width:821px){
-  /*topページ*/
-  .top-main .main-box .top-font {
-    top: 22%;
-  }
-  .top-main .main-box .top_image .top-font h2 {
-    font-size: 1.4em;
-  }
   /*記事投稿一覧*/
   .photoGarelly .items {
     width: 47%;
@@ -442,22 +420,9 @@ body {
   .photoGarelly .items {
     width: 97%;
   }
-  /*topページ*/
-  .top-main .main-box .top-font {
-    top: 20%;
-  }
 }
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
-  /*topページ*/
-  .top-main .main-box .top-font {
-    top: 19%;
-    left: 14%;
-    width: 75%;
-  }
-  .top-main .main-box .top_image .top-font h2 {
-    font-size: 1.3em;
-  }
   .button-box {
     display: block;
   }

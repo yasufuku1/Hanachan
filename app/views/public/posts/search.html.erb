@@ -3,7 +3,7 @@
   <% if @posts.count == 0 %>
     <p>検索結果はありません</p>
   <% else %>
-    <%= @posts.count %>件の検索結果が見つかりました
+    <p><%= @posts.count %>件の検索結果が見つかりました</p>
   <% end %>
   <div class="photoGarelly">
     <% @posts.each do |post| %>
