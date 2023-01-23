@@ -83,10 +83,58 @@ body {
   color: transparent;
 }
 /* ---------------------------- */
-/* ---- 　kaminari　　---- */
+/* ---- 　pagination　　---- */
 /* ---------------------------- */
 .kaminari {
   text-align: center;
+}
+.pagination span.page.current {
+  color: #696969;   /*文字の色を変える*/
+  padding: 0 .2em;
+  margin: 0 .4em;
+}
+.pagination span.first a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+.pagination span.prev a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+.pagination span.next a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+.pagination span.last a {
+  color: #696969;   /*文字の色を変える*/
+  margin: 0 .4em;
+  transition: .4s;
+}
+/* 表示しているページ番号のデザイン */
+.pagination span.page a {
+  margin: 0 .4em;
+  color: #696969;
+  padding: 0 .2em;
+  transition: .4s;
+}
+/*ホバー時のデザイン*/
+.pagination span.page a:hover {
+  color: #93c9ff;
+}
+.pagination span.first a:hover {
+  color: #93c9ff;
+}
+.pagination span.prev a:hover {
+  color: #93c9ff;
+}
+.pagination span.next a:hover {
+  color: #93c9ff;
+}
+.pagination span.last a:hover {
+  color: #93c9ff;
 }
 /* ---------------------------- */
 /* ----検索フォーム、ボタン---- */
