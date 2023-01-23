@@ -134,7 +134,6 @@
 .article-user .article-box:nth-child(2) {
   display: flex;
   align-items: center;
-  margin: 0 50px;
 }
 .article-user .article-box .post-profile-img {
   align-items: center;
@@ -148,20 +147,38 @@
 .article-user .article-box .edit-box {
   margin-right: 50px;
 }
-.edit-font {
-  color: #008b8b;
-  font-size: 15px;
-  text-decoration: none;
+.article-user .article-box .edit-box a {
+  padding: 0.2em 0.9em .4em;
+  text-align: center;
+  color: #fff;
+  background: #c0c0c0;
+  transition: .4s;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  font-size: .8em;
+}
+.article-user .article-box .edit-box a:hover{
+  color: #c0c0c0;
+  background: #fff;
 }
 /*投稿編集ボタンここまで*/
 /*投稿削除ボタン*/
 .article-user .article-box .delete-box {
-  margin-right: 50px;
+  margin-right: 9px;
 }
-.delete-font {
-  color: #008b8b;;
-  font-size: 15px;
-  text-decoration: none;
+.article-user .article-box .delete-box a {
+  padding: 0.2em 0.9em .4em;
+  text-align: center;
+  color: #fff;
+  background: #c0c0c0;
+  transition: .4s;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  font-size: .8em;
+}
+.article-user .article-box .delete-box a:hover{
+  color: #c0c0c0;
+  background: #fff;
 }
 /*投稿削除ボタンここまで*/
 .article {
@@ -208,98 +225,6 @@
 .post-favorite .favorite_btn:nth-child(2) {
   color: #000000;
 }
-/*投稿記事へのコメント*/
-.article-post-comments {
-  margin: 2em auto;
-}
-.article-post-comments .comment-title {
-  background: #72c7e6;
-  color: #fff;
-  border: none;
-  font-size: 1.2em;
-  padding: .2em 0 .2em .7em;
-}
-.article-post-comments .comment-count {
-  margin: 0.5em auto;
-}
-.article-post-comments .comment-count p{
-  font-size: 0.9em;
-  padding: .2em 0 .2em .7em;
-}
-.article-post-comments .comment-sec01 {
-  margin: 2em;
-}
-.article-post-comments .comment-sec01 .comment-user {
-  display: flex;
-  align-items: center;
-}
-.article-post-comments .comment-sec01 .comment-time {
-  margin: .3em .4em;
-}
-.article-post-comments .comment-sec01 .comment-body {
-  margin: .3em .4em;
-}
-.article-post-comments .comment-sec01 .comment-body p {
-  font-size: 0.9em;
-}
-.article-post-comments .comment-sec01 .comment-delete-btn {
-  margin: 1em .5em;
-  text-align: end;
-}
-.article-post-comments .comment-sec01 .comment-delete-btn a {
-  width: 160px;
-  padding: 0.3em 0.9em;
-  text-align: center;
-	text-decoration: none;
-	border: 2px solid #72c7e6;
-	border-radius: 3px;
-	transition: .4s;
-	background-color: #72c7e6;
-	color: #fff;
-	font-family: 'Noto Serif JP', serif;
-}
-.article-post-comments .comment-sec01 .comment-delete-btn a:hover {
-	background-color: #fff;
-  color: #72c7e6;
-}
-.article-post-comments .comment-sec01 .comment-user .comment-user-name {
-  padding-left: .5em;
-}
-.article-post-comments .comment-sec02 textarea#post_comment_comment {
-  width: 100%;
-  margin: 8px 0;
-  padding: 0.3em;
-  border: 1px solid #1b2538;
-	border-radius: 4px;
-	outline: none;
-	line-height: 1.8em;
-	font-size: 1.3em;
-	font-weight: 500;
-	height: 100px;
-}
-.article-post-comments .comment-sec02 textarea#post_comment_comment:focus {
-  border-color: #da3c41;
-}
-.article-post-comments .comment-sec02 {
-  text-align: center;
-  margin: 1em;
-}
-.article-post-comments .comment-sec02 input[type="submit"] {
-  width: 160px;
-  padding: 0.8em;
-  text-align: center;
-	text-decoration: none;
-	border: 2px solid #72c7e6;
-	border-radius: 3px;
-	transition: .4s;
-	background-color: #72c7e6;
-	color: #fff;
-	font-family: 'Noto Serif JP', serif;
-}
-.article-post-comments .comment-sec02 input[type="submit"]:hover {
-	background-color: #fff;
-  color: #72c7e6;
-}
 /* レスポンシブ対応 */
 /* 950以下821以上 */
 @media screen and (max-width:950px){
@@ -315,6 +240,23 @@
     width: 47%;
   }
 }
+/* 724以下以上 */
+@media screen and (max-width:724px){
+  /*記事投稿一覧*/
+  .article-user {
+    flex-direction: column;
+  }
+  .article-user .article-box {
+    margin: .9em auto;
+  }
+  .article-user .article-box .edit-box {
+    margin-right: 20px;
+}
+  .article-user .article-box .delete-box {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+}
 /* 649以下以上 */
 @media screen and (max-width:649px){
   /*記事投稿一覧*/
@@ -325,9 +267,6 @@
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
   /*topページ*/
-  .article-user {
-    flex-direction: column;
-  }
   .article-user .article-box:first-child {
     margin: 5px 5px 20px;
   }
