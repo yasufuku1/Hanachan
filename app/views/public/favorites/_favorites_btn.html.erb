@@ -1,0 +1,17 @@
+<!--ログインしているユーザネームがguestuserでなければボタンを表示-->
+<% if current_user.name != "guestuser" %>
+  <% if post.favorited_by?(current_user) %>
+  <p class="post-favorite">
+    <%= link_to post_favorites_path(post), method: :delete, remote: true, class: "favorite_btn" do %>
+      <i class="fas fa-heart"></i><%= post.favorites.count %>いいね
+    <% end %>
+    <% else %>
+    <%= link_to post_favorites_path(post), method: :post, remote: true, class: "favorite_btn" do %>
+      <i class="far fa-heart"></i><%= post.favorites.count %>いいね
+    <% end %>
+  </p>
+  <% end %>
+  <!--それ以外はボタン機能なしの表記-->
+<% else %>
+  <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
+<% end %>
