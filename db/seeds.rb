@@ -18,3 +18,8 @@ Admin.create!(
   email: ENV['ADMIN_EMAIL'],
   password: ENV['ADMIN_PASSWORD']
 )
+ User.create!(
+  name: ENV['USER_NAME'],
+  email: ENV['USER_EMAIL'],
+  password: ENV['USER_PASSWORD']
+)
