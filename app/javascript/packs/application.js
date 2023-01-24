@@ -37,6 +37,10 @@ $(document).on('turbolinks:load', function () {
       $(this).toggleClass('active');//ボタン自身に activeクラスを付与し
       $(".area_nav_header").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
   });
+  $(".area_nav_header a").click(function () {//ナビゲーションのリンクがクリックされたら
+      $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+      $(".area_nav_header").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+  });
 //   .page-topをクリックした際の設定
   $('.footer .page-top').click(function () {
       $('body,html').animate({
