@@ -35,7 +35,7 @@
 }
 .user_search_lead a {
   width: 160px;
-  padding: 0.6em 2.7em;
+  padding: 0.6em 2.0em;
   text-align: center;
 	text-decoration: none;
 	border: 2px solid #ee8194;
@@ -43,7 +43,7 @@
 	transition: .4s;
 	background-color: #ee8194;
 	color: #fff;
-	font-size: 13px;
+	font-size: .9em;
 }
 .user_search_lead a:hover {
 	background-color: #fff;
@@ -53,14 +53,14 @@
 .new-post-btn a {
   width: 160px;
   background-color: #c0c0c0;
-  padding: 0.8em 2.7em;
+  padding: 0.6em 2.0em;
   text-align: center;
 	text-decoration: none;
   border: 2px solid #c0c0c0;
   border-radius: 3px;
   transition: .4s;
   color: #fff;
-  font-size: 13px;
+  font-size: .9em;
 }
 .new-post-btn a:hover {
   color: #c0c0c0;
@@ -151,14 +151,14 @@
   margin-right: 50px;
 }
 .article-user .article-box .edit-box a {
-  padding: 0.2em 0.9em .4em;
+  padding: .3em .9em .4em;
   text-align: center;
   color: #fff;
   background: #c0c0c0;
   transition: .4s;
   border: 2px solid #c0c0c0;
   border-radius: 3px;
-  font-size: .8em;
+  font-size: .9em;
 }
 .article-user .article-box .edit-box a:hover{
   color: #c0c0c0;
@@ -170,14 +170,14 @@
   margin-right: 9px;
 }
 .article-user .article-box .delete-box a {
-  padding: 0.2em 0.9em .4em;
+  padding: .3em .9em .4em;
   text-align: center;
   color: #fff;
   background: #c0c0c0;
   transition: .4s;
   border: 2px solid #c0c0c0;
   border-radius: 3px;
-  font-size: .8em;
+  font-size: .9em;
 }
 .article-user .article-box .delete-box a:hover{
   color: #c0c0c0;
