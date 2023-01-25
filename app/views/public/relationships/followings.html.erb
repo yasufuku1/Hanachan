@@ -3,28 +3,12 @@
     <%= render "public/users/user_search_lead" %>
     <div class="user_index_box">
       <% if @users.exists? %>
-        <% @users.each do |user| %>
-        <div class="user-sec01">
-          <div class="user-item">
-            <%= link_to user_path(user) do %>
-              <%= image_tag user.get_profile_image(100, 100), style: "border-radius: 50%;" %>
-          </div>
-          <div class="user-name-item">
-            <%= user.name %>
-          <% end %>
-        </div>
-        <div class="user-item">
-          <% if current_user.name != "guestuser" && current_user.id != user.id %>
-            <%= render "public/relationships/relationships_btn", user: user %>
-          <% end %>
-        </div>
-      </div>
-      <% end %>
+      <%= render "public/users/index", users: @users %>
       <% else %>
         <p>現在、フォローしている人はいません</p>
       <% end %>
     </div>
   <div class="kaminari">
-      <%= paginate @users %>
+    <%= paginate @users %>
   </div>
 </div>

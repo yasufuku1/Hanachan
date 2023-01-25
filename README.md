@@ -1,6 +1,10 @@
 # Hanachan
 
+<p align="center"><img src="https://github.com/yasufuku1/Hanachan/blob/main/app/assets/images/logo.png" alt="nagano_cake" title="nagano_cake_log" width="130" height="130" /></p>
+
 ## サイト概要
+
+ユーザが部屋に飾った花の写真を見たり、投稿したりすることができるSNSサイトになります。
 
 ## サイトテーマ
 
@@ -9,8 +13,6 @@
 そのアイディアが欲しいと思う時があります。
 
 そんな時、本サイトが「理想の花」を見つける手助けとなります。
-
-本サイトは、実際のユーザが部屋に飾った花の写真を見ることができるSNSサイトになります。
 
 ## テーマを選んだ理由
 
@@ -42,56 +44,14 @@
 
 ## 設計書
 
-- [ER図](https://app.diagrams.net/#G1pIJYoECayg2zmK2DTHtsihS6Ts72cRUt)（作成中）
+- [ER図](https://drive.google.com/file/d/147M47Xi2Y8tYMvBloyM3gwCquDofzTzN/view?usp=share_link)
 
-- [テーブル定義書](https://docs.google.com/spreadsheets/d/1HGsPrEZvctHzRUyFvG2v9C5LtvTCfTEuPhe_9vRxOY0/edit#gid=1373217982)（作成中）
+- [テーブル定義書](https://drive.google.com/file/d/1P2tIFi9lrKaOIgiarPTBdM_k50ax7LvQ/view?usp=share_link)
 
-- [アプリケーション詳細設計書]（作成中）
-
-- [ワイヤーフレーム]（作成中）
-
-## gem一覧
-
-- ログイン機能
-
-  - gem 'devise'
-
-##
-
-- デバック
-
-  - gem 'pry-byebug'
-
-  - gem 'pry-rails'
-
-##
-
-- ページネーション
-
-  - gem 'kaminari 1.2.1'
-
-##
-
-- ファイルアップロード
-
-  - gem image_processing 1.2
-
-##
-
-- レイアウト
-
-  - gem 'FontAwesome'
-
-##
-
-- エラーメッセージの日本語化
-
-  - gem 'devise-i18n'
-
-  - gem 'devise-i18n-views'
+- [アプリケーション詳細設計書](https://drive.google.com/file/d/1n3qUZ1N--ZtbvP3uvdMNVGvUHi_lrOb0/view?usp=share_link)
 
 ## 使用素材
 
-- [unsplash](https://unsplash.com/ja)（予定）
+- [unsplash](https://unsplash.com/ja)
 
-- [Canva](https://www.canva.com/)（予定）
+- [Canva](https://www.canva.com/)
