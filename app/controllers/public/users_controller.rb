@@ -2,15 +2,10 @@ class Public::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit,:update]
   before_action :ensure_guest_user, only: [:edit]
+  before_action :ensure_unsubscribe,only:[:show]
   before_action :ensure_active_user, only: [:show]
 
   def show
-    # unsubscribeでリロードされた時の対策
-    if params[:id] == "unsubscribe"
-      redirect_to root_path, notice: "リロードされた為トップページに戻りました"
-      return
-    end
-
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).order(created_at: :desc).page(params[:page]).per(8)
   end
@@ -65,6 +60,13 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.name == "guestuser"
       redirect_to user_path(current_user), alert: "ゲストユーザーはプロフィール編集画面へ遷移できません"
+    end
+  end
+
+  def ensure_unsubscribe
+    # unsubscribeでリロードされた時の対策
+    if params[:id] == "unsubscribe"
+      redirect_to root_path, notice: "リロードされた為トップページに戻りました"
     end
   end
 

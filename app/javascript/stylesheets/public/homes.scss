@@ -15,9 +15,9 @@
 }
 .top-main .main-box .top-font {
   position: absolute;
-  top: 20%;
-  left: 34%;
-  width: 30%;
+  top: 22%;
+  left: 23%;
+  width: 50%;
   color: #eee;
 }
 .top-main .main-box .top_image .top-font h2 {
@@ -115,6 +115,9 @@
 /* 821以下以上 */
 @media screen and (max-width:821px){
   /*topページ*/
+  .top-main .main-box .top-font {
+    top: 20%;
+  }
   .top-main .main-box .top_image .top-font h2 {
     font-size: 1.4em;
   }
@@ -122,6 +125,9 @@
 /* 649以下以上 */
 @media screen and (max-width:649px){
   /*topページ*/
+  .top-main .main-box .top-font {
+    top: 18%;
+  }
   .top-main .main-box .top_image .top-font h2 {
     font-size: 1.2em;
   }
@@ -133,6 +139,7 @@
 @media screen and (max-width:530px){
   /*topページ*/
   .top-main .main-box .top-font {
+    top: 16%;
     left: 14%;
     width: 75%;
   }
@@ -149,7 +156,7 @@
 /*375以下スマホ対応*/
 @media screen and (max-width:375px){
 .top-main .main-box .top-font {
-    top: 13%;
+    top: 14%;
     left: 14%;
     width: 75%;
   }
