@@ -17,7 +17,7 @@ class Public::PostCommentsController < ApplicationController
           notification.checked = true
       end
       notification.save if notification.valid?
-      redirect_to post_path(@post_comment),notice: '投稿に成功しました'
+      redirect_to post_path(@post_comment)
     else
       redirect_to post_path(@post_comment), alert: 'コメントは1文字以上300文字以内で入力してください'
     end
@@ -28,7 +28,7 @@ class Public::PostCommentsController < ApplicationController
     # 通知を削除する
     Notification.find_by(visitor_id: current_user.id,visited_id: @post_comment.user_id,post_id: @post_comment.id,action: 'comment',comment_id: params[:id]).destroy
     PostComment.find(params[:id]).destroy
-    redirect_to post_path(params[:post_id]), notice: '投稿を削除しました'
+    redirect_to post_path(params[:post_id])
   end
 
   private
