@@ -4,12 +4,14 @@ class Public::RelationshipsController < ApplicationController
   def create
     current_user.follow(params[:user_id])
     user = Relationship.find_by(follower_id: current_user.id, followed_id: params[:user_id])
+    # 通知も同時に作成
     user.create_notification_follow!(current_user)
     redirect_to request.referer
   end
 
   def destroy
     current_user.unfollow(params[:user_id])
+    # 通知も削除
     Notification.find_by(visitor_id: current_user.id, visited_id: params[:user_id],action: 'follow').destroy
     redirect_to request.referer
   end

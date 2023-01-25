@@ -6,7 +6,7 @@ class Public::PostCommentsController < ApplicationController
     comment = current_user.post_comments.new(post_comment_params)
     comment.post_id = @post_comment.id
     if comment.save
-      new_post_comment = PostComment.where(id: comment.id).where.not(user_id: current_user.id)
+      # 通知も同時に作成
       notification = current_user.active_notifications.new(
         visited_id: @post_comment.user_id,
         post_id: comment.post_id,
@@ -25,6 +25,7 @@ class Public::PostCommentsController < ApplicationController
 
   def destroy
     @post_comment = Post.find(params[:post_id])
+    # 通知を削除する
     Notification.find_by(visitor_id: current_user.id,visited_id: @post_comment.user_id,post_id: @post_comment.id,action: 'comment',comment_id: params[:id]).destroy
     PostComment.find(params[:id]).destroy
     redirect_to post_path(params[:post_id]), notice: '投稿を削除しました'
