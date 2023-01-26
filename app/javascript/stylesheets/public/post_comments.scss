@@ -24,14 +24,14 @@
   flex-wrap: wrap;
   align-items: center;
 }
-.article-post-comments .comment-sec01 .comment-time {
-  margin: 0.3em 0 0 25px;
-  font-size: .8em;
+.article-post-comments .comment-sec01 .comment-user .comment-user-name {
+  padding-left: .5em;
+  font-size: .9em;
 }
 .article-post-comments .comment-sec01  .comment-body {
   position: relative;
   display: inline-block;
-  margin: 1em 0 0 15px;
+  margin: .5em 0 .1em 15px;
   padding: 7px 10px;
   max-width: 100%;
   color: #555;
@@ -42,11 +42,15 @@
 .article-post-comments .comment-sec01  .comment-body p {
   font-size: 0.9em;
 }
-.article-post-comments .comment-sec01 .comment-delete-btn {
-  margin: 1em .5em;
-  text-align: end;
+.article-post-comments .comment-sec01 .comment-foot {
+  margin: 0.3em 0 0 25px;
+  font-size: .8em;
+  display: flex;
 }
-.article-post-comments .comment-sec01 .comment-delete-btn a {
+.article-post-comments .comment-sec01 .comment-foot .comment-delete-btn {
+  margin: .1em .5em;
+}
+.article-post-comments .comment-sec01 .comment-foot .comment-delete-btn a {
   width: 160px;
   padding: 0.3em 0.9em;
   text-align: center;
@@ -57,13 +61,11 @@
 	background-color: #72c7e6;
 	color: #fff;
 	font-family: 'Noto Serif JP', serif;
+	font-size: .9em;
 }
-.article-post-comments .comment-sec01 .comment-delete-btn a:hover {
+.article-post-comments .comment-sec01 .comment-foot .comment-delete-btn a:hover {
 	background-color: #fff;
   color: #72c7e6;
-}
-.article-post-comments .comment-sec01 .comment-user .comment-user-name {
-  padding-left: .5em;
 }
 .article-post-comments .comment-sec02 textarea#post_comment_comment {
   width: 100%;
@@ -96,6 +98,7 @@
 	background-color: #72c7e6;
 	color: #fff;
 	font-family: 'Noto Serif JP', serif;
+	font-size: .9em;
 }
 .article-post-comments .comment-sec02 input[type="submit"]:hover {
 	background-color: #fff;
