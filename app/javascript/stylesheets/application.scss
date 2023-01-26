@@ -431,44 +431,6 @@ body {
     height: 44px;
     padding: 10px 30px;
   }
-  .article-user {
-    flex-direction: column;
-  }
-  .article-user .article-box:first-child {
-    margin: 5px 5px 20px;
-  }
-  .article-user .article-box:nth-child(2) {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  .article {
-    display: flex;
-    flex-direction: column;
-  }
-  .article .sec-02-left {
-    background-color: #fff;
-    justify-content: center;
-  }
-  .article-image {
-    width: 100%;
-  }
-  .article-culom:first-child {
-    font-size: 16px;
-    margin: 0 2px 10px;
-    letter-spacing: .11em;
-  }
-  .article-culom:nth-child(2) {
-    font-size: 12px;
-    margin-left: 2px;
-    letter-spacing: .11em;
-  }
-  .article-edit .edit-box {
-    margin: 10px auto;
-  }
-  .article-edit .delete-box {
-    margin: 10px auto;
-  }
   /*ユーザプロフィール詳細*/
   .profile-show {
     flex-direction: column;

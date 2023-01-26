@@ -89,16 +89,17 @@
 }
 .photoGarelly .items .index-article .title-font {
   font-weight: 600;
-  text-align: center;
+  margin: 0.3em auto;
+  font-size: 1.1em;
 }
-.photoGarelly .items .index-article span {
-  height: 20px;
+.photoGarelly .items .index-article .post-body {
+  font-size: .9em;
+  padding: 0.5em;
 }
 .photoGarelly .items .index-article .read-more {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 2px;
 }
 .photoGarelly .items .index-article .read-more .post-favorite {
   color: red;
@@ -208,14 +209,13 @@
 }
 .article .sec-02-right .article-culom:first-child {
   display: block;
-  font-size: 23px;
+  font-size: 1.5em;
   letter-spacing: .13em;
   font-weight: 600;
   padding: 25px 30px;
   font-family: 'Noto Serif JP', serif;
 }
 .article .sec-02-right .article-culom:nth-child(2) {
-  font-size: 17px;
   letter-spacing: .12em;
   padding: 0 30px 25px;
 }
@@ -269,6 +269,9 @@
 }
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
+  .article-user {
+    flex-direction: column;
+  }
   .article-user .article-box:first-child {
     margin: 5px 5px 20px;
   }
@@ -301,8 +304,20 @@
   .article-edit .edit-box {
     margin: 10px auto;
   }
+  .article-user .article-box .edit-box a {
+    font-size: .8em;
+  }
   .article-edit .delete-box {
     margin: 10px auto;
+  }
+  .article-user .article-box .delete-box a {
+    font-size: .8em;
+  }
+  .article .sec-02-right .article-culom:first-child {
+    font-size: 1.3em;
+  }
+  .article .sec-02-right .article-culom:nth-child(2) {
+    font-size: .9em;
   }
 /*記事投稿一覧*/
   .index-btn-box {

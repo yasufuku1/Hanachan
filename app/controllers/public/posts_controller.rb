@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update,:destroy]
+  before_action :ensure_guest_user, only: [:new]
   before_action :login_check_user,only: [:show]
 
   def search
@@ -62,6 +63,12 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     unless @post.user == current_user
       redirect_to posts_path, alert: "不正なアクセスです"
+    end
+  end
+
+  def ensure_guest_user
+    if current_user.name == "guestuser"
+      redirect_to posts_path, alert: "ゲストユーザは閲覧のみのご利用となります。実際の利用は新規登録が必要になります"
     end
   end
 
