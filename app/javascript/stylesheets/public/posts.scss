@@ -269,6 +269,9 @@
 }
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
+  .article-user {
+    flex-direction: column;
+  }
   .article-user .article-box:first-child {
     margin: 5px 5px 20px;
   }

@@ -1,18 +1,26 @@
 <div class="photoGarelly">
   <% posts.each do |post| %>
   <div class="items">
-    <%= image_tag post.get_image(120, 120), class: "post-img" %>
+    <%= image_tag post.get_image(500, 500), class: "post-img" %>
     <div class="index-article">
       <p class="title-font">
         <%= post.title.truncate(11) %>
       </p>
       <span><%= post.body.truncate(25) %></span>
       <div class="read-more">
-        <% if post.favorited_by?(current_user) %>
+        <!--ログインをしており、お気に入り登録をしていれば-->
+        <% if user_signed_in? %>
+          <% if post.favorited_by?(current_user) %>
+          <!--赤色で表示-->
           <p class="post-favorite">
             <i class="fas fa-heart"></i><%= post.favorites.count %>
           </p>
-        <% else %>
+          <% else %>
+            <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
+          <% end %>
+        <% end %>
+        <!--ログインをしていなければ-->
+        <% unless user_signed_in? %>
           <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
         <% end %>
 　      <p><i class="far fa-comment"></i><%= post.post_comments.count %></p>
@@ -25,5 +33,5 @@
   <% end %>
 </div>
 <div class="kaminari">
-    <%= paginate posts %>
+  <%= paginate posts %>
 </div>

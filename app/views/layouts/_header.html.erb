@@ -35,7 +35,12 @@
         </li>
         <li class="nav-item">
           <%= link_to notifications_path do %>
-            <p class="nav-font"><i class="fas fa-bell"></i></p>
+            <p class="nav-font"><i class="fas fa-bell"></i>
+            <% if unchecked_notifications.any? %>
+            <!--もし通知があればピンクのマークで知らせる-->
+              <i class="fas fa-circle" style="color: #ffb6c1;position: absolute;left: 75%;" ></i>
+            <% end %>
+            </p>
           <% end %>
         </li>        <!--管理者側ログイン-->
         <% elsif admin_signed_in? %>
