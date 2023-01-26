@@ -8,7 +8,7 @@
   <% post.post_comments.each do |post_comment| %>
     <div class="comment-sec01">
       <div class="comment-user">
-        <p><%= image_tag post_comment.user.get_profile_image(100,100), style: "border-radius: 50%;" %></p>
+        <p><%= image_tag post_comment.user.get_profile_image(50,50), style: "border-radius: 50%;" %></p>
         <div class="comment-user-name">
           <%= link_to user_path(post_comment.user) do %>
             <%= post_comment.user.name %>
@@ -18,14 +18,14 @@
       <div class="comment-body">
         <%= simple_format(post_comment.comment) %>
       </div>
-      <div class="comment-time">
+      <div class="comment-foot">
         <p><%= post_comment.created_at.strftime('%Y/%m/%d') %></p>
-      </div>
-      <% if post_comment.user == current_user %>
+        <% if post_comment.user == current_user %>
         <div class="comment-delete-btn">
          <%= link_to "削除", post_post_comment_path(post, post_comment), method: :delete, remote: true, data: {confirm: "本当に削除しますか？"} %>
         </div>
       <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>

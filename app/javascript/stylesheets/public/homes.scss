@@ -16,12 +16,11 @@
 .top-main .main-box .top-font {
   position: absolute;
   top: 22%;
-  left: 23%;
-  width: 50%;
+  width: 100%;
   color: #eee;
 }
 .top-main .main-box .top_image .top-font h2 {
-  font-size: 1.5em;
+  font-size: 1.6em;
   padding: 0.1rem;
   position: relative; /*スクロール位置固定*/
 }
@@ -116,20 +115,20 @@
 @media screen and (max-width:821px){
   /*topページ*/
   .top-main .main-box .top-font {
-    top: 20%;
+    top: 21%;
   }
   .top-main .main-box .top_image .top-font h2 {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 }
 /* 649以下以上 */
 @media screen and (max-width:649px){
   /*topページ*/
   .top-main .main-box .top-font {
-    top: 18%;
+    top: 20%;
   }
   .top-main .main-box .top_image .top-font h2 {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
   .top-main .about-box p {
     font-size: 1.0em;
@@ -139,12 +138,10 @@
 @media screen and (max-width:530px){
   /*topページ*/
   .top-main .main-box .top-font {
-    top: 16%;
-    left: 14%;
-    width: 75%;
+    top: 18%;
   }
   .top-main .main-box .top_image .top-font h2 {
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
   .top-main .about-box h3 span {
     font-size: .9em;
@@ -156,11 +153,9 @@
 /*375以下スマホ対応*/
 @media screen and (max-width:375px){
 .top-main .main-box .top-font {
-    top: 14%;
-    left: 14%;
-    width: 75%;
+    top: 16%;
   }
   .top-main .main-box .top_image .top-font h2 {
-    font-size: 1.0em;
+    font-size: 1.2em;
   }
 }
