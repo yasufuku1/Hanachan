@@ -2,33 +2,32 @@ class Public::PostCommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @post_comment = Post.find(params[:post_id])
-    comment = current_user.post_comments.new(post_comment_params)
-    comment.post_id = @post_comment.id
-    if comment.save
+    @post = Post.find(params[:post_id])
+    @comment = current_user.post_comments.new(post_comment_params)
+    @comment.post_id = @post.id
+    if @comment.save
       # 通知も同時に作成
       notification = current_user.active_notifications.new(
-        visited_id: @post_comment.user_id,
-        post_id: comment.post_id,
+        visited_id: @post.user_id,
+        post_id: @comment.post_id,
         action: 'comment',
-        comment_id: comment.id
+        comment_id: @comment.id
         )
       if notification.visitor_id == notification.visited_id
           notification.checked = true
       end
       notification.save if notification.valid?
-      redirect_to post_path(@post_comment)
     else
-      redirect_to post_path(@post_comment), alert: 'コメントは1文字以上300文字以内で入力してください'
+      render :error
     end
   end
 
   def destroy
-    @post_comment = Post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
+    @comment = PostComment.find(params[:id]) #エラーメッセージが表示されている場合、エラーメッセージをクリアにする
     # 通知を削除する
-    Notification.find_by(visitor_id: current_user.id,visited_id: @post_comment.user_id,post_id: @post_comment.id,action: 'comment',comment_id: params[:id]).destroy
+    Notification.find_by(visitor_id: current_user.id,visited_id: @post.user_id,post_id: @post.id,action: 'comment',comment_id: params[:id]).destroy
     PostComment.find(params[:id]).destroy
-    redirect_to post_path(params[:post_id])
   end
 
   private

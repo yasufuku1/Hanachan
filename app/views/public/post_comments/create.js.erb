@@ -1,0 +1,4 @@
+$("#post_comments-area").html("<%= j(render 'public/post_comments/index', { post: @post }) %>")
+<!--エラーメッセージが表示させていたらクリアにするため-->
+$("#post_comment-error_messages").html("<%= j(render 'public/shared/post_comment_error_message', { resource: @comment }) %>")
+$("textarea").val('')
