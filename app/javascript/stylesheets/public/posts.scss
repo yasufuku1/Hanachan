@@ -73,6 +73,7 @@
   flex-wrap: wrap;
   margin: 5px;
 }
+
 .photoGarelly .items {
   display: flex;
   flex-direction: column;
@@ -95,6 +96,7 @@
 .photoGarelly .items .index-article .post-body {
   font-size: .9em;
   padding: 0.5em;
+  min-height: 72px;
 }
 .photoGarelly .items .index-article .read-more {
   display: flex;
@@ -189,10 +191,11 @@
   display: flex;
   margin: 40px 0 10px;
   background-color: #eee;
+  width: 100%;
 }
 .article .sec-02-left {
   display: flex;
-  flex-grow :1;
+  flex-grow : 1;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -206,23 +209,34 @@
   display: block;
   flex-grow: 3;
   flex-basis: 70%;
+  min-width: 350px;
+  width: 100%;
 }
 .article .sec-02-right .article-culom:first-child {
   display: block;
-  font-size: 1.5em;
   letter-spacing: .13em;
-  font-weight: 600;
   padding: 25px 30px;
   font-family: 'Noto Serif JP', serif;
+  min-width: 100%;
+}
+.article .sec-02-right .article-culom:first-child .post-title {
+  overflow-wrap: break-word;
+  font-size: 1.3em;
+  font-weight: 600;
 }
 .article .sec-02-right .article-culom:nth-child(2) {
   letter-spacing: .12em;
   padding: 0 30px 25px;
 }
+.article .sec-02-right .article-culom:nth-child(2) p {
+  overflow-wrap: break-word;
+  font-size: 1.1em;
+}
 /*いいねボタン*/
 /*いいね登録済みは赤*/
 .post-favorite .favorite_btn:first-child {
   color: red;
+  margin-left: .4em;
 }
 /*いいね未登録は黒*/
 .post-favorite .favorite_btn:nth-child(2) {
@@ -259,6 +273,28 @@
     margin-right: 0;
     margin-left: 20px;
   }
+  .article {
+    display: flex;
+    flex-direction: column;
+  }
+  .article .sec-02-left {
+    background-color: #fff;
+    justify-content: center;
+  }
+  .article-image {
+    width: 100%;
+  }
+  .article .sec-02-right {
+    min-width: auto;
+  }
+  .article .sec-02-right .article-culom:first-child {
+    margin: 0 2px 10px;
+    letter-spacing: .11em;
+  }
+  .article .sec-02-right .article-culom:nth-child(2) {
+    margin-left: 2px;
+    letter-spacing: .11em;
+  }
 }
 /* 649以下以上 */
 @media screen and (max-width:649px){
@@ -280,27 +316,6 @@
     display: flex;
     justify-content: space-evenly;
   }
-  .article {
-    display: flex;
-    flex-direction: column;
-  }
-  .article .sec-02-left {
-    background-color: #fff;
-    justify-content: center;
-  }
-  .article-image {
-    width: 100%;
-  }
-  .article-culom:first-child {
-    font-size: 16px;
-    margin: 0 2px 10px;
-    letter-spacing: .11em;
-  }
-  .article-culom:nth-child(2) {
-    font-size: 12px;
-    margin-left: 2px;
-    letter-spacing: .11em;
-  }
   .article-edit .edit-box {
     margin: 10px auto;
   }
@@ -313,11 +328,11 @@
   .article-user .article-box .delete-box a {
     font-size: .8em;
   }
-  .article .sec-02-right .article-culom:first-child {
-    font-size: 1.3em;
+  .article .sec-02-right .article-culom:first-child .post-title {
+    font-size: 1.2em;
   }
-  .article .sec-02-right .article-culom:nth-child(2) {
-    font-size: .9em;
+  .article .sec-02-right .article-culom:nth-child(2) p {
+    font-size: 1em;
   }
 /*記事投稿一覧*/
   .index-btn-box {
