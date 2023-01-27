@@ -16,5 +16,5 @@ users = User.create!([
 ])
 Post.create!([
   { image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/sample-post1.jpg"), filename:"sample-post1.jpg"), title: '黄色いお花', body: '部屋が寂しかったので、明るい色のお花で部屋の雰囲気を変えてみました。', user_id: users[0].id},
-  { image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/sample-post2.jpg"), filename:"sample-post2.jpg"), title: 'キッチンに飾ってみました', body: '料理をする時間が増えたので、キッチンにチューリップを飾ってみました。。', user_id: users[1].id},
+  { image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/sample-post2.jpg"), filename:"sample-post2.jpg"), title: 'キッチンに飾ってみました', body: '料理をする時間が増えたので、キッチンにチューリップを飾ってみました。', user_id: users[1].id},
  ])
