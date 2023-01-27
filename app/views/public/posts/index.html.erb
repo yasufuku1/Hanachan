@@ -1,3 +1,5 @@
+<div id="loading">
+</div>
 <div class="photo-container">
   <h2><span>投稿一覧</span></h2>
   <div class="index-btn-box">
@@ -11,4 +13,8 @@
   </div>
   <%= render "index", posts: @posts %>
 </div>
+<script>
+  //render "index"の.itemsを0.5秒待機してふわっと表示
+ScrollReveal({ reset: false, duration: 1500 }).reveal('.items',{ delay: 500 });
+</script>
 
