@@ -3,6 +3,7 @@ class Public::UsersController < ApplicationController
   before_action :ensure_correct_user, only: [:edit,:update]
   before_action :ensure_guest_user, only: [:edit]
   before_action :ensure_unsubscribe,only:[:show]
+  before_action :ensure_withdraw,only:[:show]
   before_action :ensure_active_user, only: [:show]
 
   def show
@@ -30,7 +31,7 @@ class Public::UsersController < ApplicationController
     @user = current_user
     @user.update(is_active: false)
     reset_session
-    redirect_to root_path,notice: "退会が完了しました"
+    redirect_to root_path,notice: "退会が完了しました。ご利用ありがとうございました。"
   end
 
   def search
@@ -66,7 +67,14 @@ class Public::UsersController < ApplicationController
   def ensure_unsubscribe
     # unsubscribeでリロードされた時の対策
     if params[:id] == "unsubscribe"
-      redirect_to root_path, notice: "リロードされた為トップページに戻りました"
+      redirect_to root_path, alert: "リロードされた為、トップページに戻りました"
+    end
+  end
+
+  def ensure_withdraw
+    # URLから退会される場合の対策
+    if params[:id] == "withdraw"
+      redirect_to root_path, alert: "マイページのプロフィール編集から退会をお願いします"
     end
   end
 
