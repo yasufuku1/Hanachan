@@ -5,7 +5,7 @@
       <%= link_to user_path(@post.user_id) do %>
         <%= image_tag @post.user.get_profile_image(100,100), style: "border-radius: 50%;", class: "post-profile-img" %>
       <div class="post-profile">
-        <%= @post.user.name %>
+        <p><%= @post.user.name %></p>
       <% end %>
       </div>
     </div>
@@ -26,14 +26,13 @@
     <% end %>
     </div>
   </div>
-
     <div class="article">
       <div class="sec-02-left">
-          <%= image_tag @post.get_image(320,320), class: "article-image" %>
+          <%= image_tag @post.get_image(350,350), class: "article-image" %>
       </div>
       <div class="sec-02-right">
         <div class="article-culom">
-          <%= @post.title %>
+          <p class="post-title"><%= @post.title %></p>
         </div>
         <div class="article-culom">
           <%= simple_format(@post.body) %>
@@ -44,12 +43,13 @@
     <%= render "public/favorites/favorites_btn", post: @post %>
   </div>
   <div class="article-post-comments">
-  <%= render "public/post_comments/index", post: @post, post_comment: @post_comment %>
-  <% if current_user.name != "guestuser" %>
+    <div id="post_comments-area">
+      <%= render "public/post_comments/index", post: @post %>
+    </div>
+    <% if current_user.name != "guestuser" %>
     <div class="comment-sec02">
-    <%= render "public/post_comments/format", post: @post, post_comment: @post_comment %>
+      <%= render "public/post_comments/format", post: @post, post_comment: @post_comment %>
     </div>
   <% end %>
   </div>
 </div>
-

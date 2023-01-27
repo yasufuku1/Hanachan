@@ -6,7 +6,7 @@ class Public::PostsController < ApplicationController
   def search
     @search = Post.search(params[:word])
     if @search == nil
-        redirect_to posts_path,alert: "検索結果がありません"
+      redirect_to posts_path,alert: "検索条件が空です"
     else
     @posts = @search.order(created_at: :desc).page(params[:page]).per(8)
     end

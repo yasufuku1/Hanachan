@@ -7,6 +7,13 @@
   flex-wrap: wrap;
   margin: 14px 0;
 }
+.profile-show:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 14px 40px;
+}
 .profile-show .profile-box-left {
   display: flex;
   align-items: center;
@@ -20,7 +27,7 @@
   margin-top: 2%;
 }
 .profile-show .profile-box-right {
-  flex-grow :4;
+  flex-grow : 4;
   display: flex;
   justify-content: space-around;
   flex-basis: 60%;
@@ -31,9 +38,10 @@
   text-align: center;
 }
 .profile-show-body {
-  display: flex;
-  justify-content: flex-start;
-  margin: 14px 0 14px 10%;
+  margin: 2em 6em;
+}
+.profile-show-body p {
+  overflow-wrap: break-word;
 }
 .profile-show-action {
   display: flex;
@@ -41,15 +49,12 @@
   justify-content: flex-start;
   margin: 2em 0 2em 5em;
 }
+.profile-show-action .profile-edit-btn:last-child {
+  margin-left: 3%;
+}
+// プロフィール編集編集ボタンここから
 .profile-show-action .profile-edit-btn {
   margin-right: 1.3em;
-}
-.profile-show-post {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 14px 40px;
 }
 /* ---------------------------- */
 /* ----プロフィール編集ボタン---- */
@@ -68,6 +73,13 @@
 .profile-show-action .profile-edit-btn a:hover {
   color: #c0c0c0;
   background-color: #fff;
+}
+.profile-show-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 14px 40px;
 }
 /* ---------------------------- */
 /* ----プロフィール編集ページ---- */
@@ -101,6 +113,7 @@
 	color: #fff;
 	margin: 0 36px;
 	font-size: 13px;
+	transition: .4s;
 }
 .button-box a:hover {
   background-color: #fff;
@@ -174,8 +187,6 @@
   padding: 0 20px;
   display: flex;
 }
-.user_search .search {
-}
 .user_search .search input[type="text"] {
   position: relative;
   height: 33px;
@@ -193,13 +204,12 @@
   border: none;
   border-radius: 6px;
 }
-/* ---------------------------- */
-/* ----ユーザ検索フォーム、
-        ボタン---- */
-/* ---------------------------- */
 /*531以下スマホ対応*/
 @media screen and (max-width:530px){
 /*ユーザプロフィール詳細*/
+  .profile-show-body {
+    margin: 1.5em .5em;
+  }
   .profile-show-action {
     flex-direction: column;
     align-items: center;
@@ -208,5 +218,8 @@
   .profile-show-action .profile-edit-btn {
     margin-right: 0;
     margin-bottom: 0.5em;
+  }
+  .profile-show .profile-box-right .profile-item:nth-child(2) {
+    margin: 0 .5em;
   }
 }
