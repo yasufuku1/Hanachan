@@ -1,5 +1,5 @@
 <div class="main">
-  <h2><span>フォロワー一覧</span></h2>
+  <h2><span class="follow-title"><%= @user.name %>さんの<br>フォロワーリスト</span></h2>
     <%= render "public/users/user_search_lead" %>
     <div class="user_index_box">
       <% if @users.exists? %>

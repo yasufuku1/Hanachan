@@ -1,13 +1,18 @@
 <div class="photo-container">
   <h2><span>検索結果</span></h2>
   <% if @posts.count == 0 %>
-    <p>検索結果はありません</p>
+    <p class="no-search-text">検索結果はありません</p>
   <% else %>
-    <p><%= @posts.count %>件の検索結果が見つかりました</p>
+    <p class="hit-search-text"><%= @posts.count %>件の検索結果が見つかりました</p>
   <% end %>
   <%= render "index", posts: @posts %>
 </div>
 <script>
+ScrollReveal({
+  reset: false,
+  duration: 1500 });
   //render "index"の.itemsを0.5秒待機してふわっと表示
-ScrollReveal({ reset: false, duration: 1500 }).reveal('.items',{ delay: 500 });
+ScrollReveal().reveal('.no-search-text',{ delay: 500 });
+ScrollReveal().reveal('.hit-search-text',{ delay: 500 });
+ScrollReveal().reveal('.items',{ delay: 500 });
 </script>

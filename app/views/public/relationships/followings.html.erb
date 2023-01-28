@@ -1,5 +1,5 @@
 <div class="main">
-  <h2><span>フォロー中</span></h2>
+  <h2><span class="follow-title"><%= @user.name %>さんの<br>フォローリスト</span></h2>
     <%= render "public/users/user_search_lead" %>
     <div class="user_index_box">
       <% if @users.exists? %>
