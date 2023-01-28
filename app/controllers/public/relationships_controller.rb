@@ -16,12 +16,12 @@ class Public::RelationshipsController < ApplicationController
     redirect_to request.referer
   end
   def followings
-    user = User.find(params[:user_id])
-    @users = user.followings.page(params[:page]).per(8)
+    @user = User.find(params[:user_id])
+    @users = @user.followings.page(params[:page]).per(8)
   end
 
   def followers
-    user = User.find(params[:user_id])
-    @users = user.followers.page(params[:page]).per(8)
+    @user = User.find(params[:user_id])
+    @users = @user.followers.page(params[:page]).per(8)
   end
 end
