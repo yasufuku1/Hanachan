@@ -81,6 +81,17 @@
   flex-wrap: wrap;
   margin: 14px 40px;
 }
+/*カーソルを合わせると画像が拡大*/
+.profile-show-post .post-image a img {
+  /*拡大・縮小時、ゆっくり動く*/
+  transition: .4s;
+}
+/*カーソルを合わせると画像が拡大*/
+.profile-show-post .post-image a img:hover {
+  transform: scale(1.1);
+  z-index: 2;
+  box-shadow: 10px 10px 2px 1px rgba(0, 0, 0, .3);
+}
 /* ---------------------------- */
 /* ----プロフィール編集ページ---- */
 /* ---------------------------- */

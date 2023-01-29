@@ -53,3 +53,9 @@
   <% end %>
   </div>
 </div>
+<script>
+ScrollReveal({
+  reset: false,
+  duration: 1500 });  //render "public/post_comments/index"の.comment-sec01を0.7秒待機してふわっと表示
+ScrollReveal().reveal('.comment-sec01',{ delay: 700, opacity: 0, interval: 100 });
+</script>

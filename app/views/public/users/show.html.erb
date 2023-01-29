@@ -50,9 +50,11 @@
 
   <div class="profile-show-post">
     <% @posts.each do |post| %>
+    <div class="post-image">
       <%= link_to post_path(post.id) do %>
         <%= image_tag post.get_image(200,200) %>
       <% end %>
+    </div>
     <% end %>
   </div>
   <div class="kaminari">

@@ -70,6 +70,6 @@
 
 - フレームワーク : Ruby on Rails
 
-- JSライブラリ : jQueryScrollReveal
+- JSライブラリ : jQuery,ScrollReveal
 
 - IDE : Cloud9

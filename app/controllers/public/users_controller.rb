@@ -31,7 +31,7 @@ class Public::UsersController < ApplicationController
     @user = current_user
     @user.update(is_active: false)
     reset_session
-    redirect_to root_path,notice: "退会が完了しました。ご利用ありがとうございました。"
+    redirect_to root_path,notice: "退会が完了致しました。ご利用ありがとうございました。"
   end
 
   def search
@@ -74,7 +74,7 @@ class Public::UsersController < ApplicationController
   def ensure_withdraw
     # URLから退会される場合の対策
     if params[:id] == "withdraw"
-      redirect_to root_path, alert: "マイページのプロフィール編集から退会をお願いします"
+      redirect_to root_path, alert: "退会手続きはマイページのプロフィール編集からお願い致します"
     end
   end
 
