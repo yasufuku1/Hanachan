@@ -68,7 +68,7 @@ class Public::PostsController < ApplicationController
 
   def ensure_guest_user
     if current_user.name == "guestuser"
-      redirect_to posts_path, alert: "ゲストユーザは閲覧のみのご利用となります。実際の利用は新規登録が必要になります"
+      redirect_to posts_path, alert: "ゲストユーザは閲覧のみのご利用となります。サービスのご利用にはユーザ登録が必要になります"
     end
   end
 
