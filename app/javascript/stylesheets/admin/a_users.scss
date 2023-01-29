@@ -54,6 +54,10 @@
 .a_profile-show .sec01 .a-profile-item-right {
   font-family: 'Noto Serif JP', serif;
   flex-basis: 66%;
+  width: 68%;
+}
+.a_profile-show .sec01 .a-profile-item-right .a-user-introduction {
+  overflow-wrap: break-word;
 }
 .a-profile-show-action {
   display: flex;
