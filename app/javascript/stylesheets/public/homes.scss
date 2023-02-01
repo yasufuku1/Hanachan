@@ -103,7 +103,7 @@
   letter-spacing: .17em;
   line-height: 2rem;
 }
-.top-main .about-box p {
+.top-main .about-box .about-topic-04 p {
   letter-spacing: .17em;
   font-weight: 500;
   padding: 20px;
@@ -111,6 +111,49 @@
   line-height: 1.2rem;
   text-align: center;
 }
+/*アコーディオン全体*/
+.QA-title {
+  margin-top: 50px;
+}
+.QA-accordion-area {
+    width: 96%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.QA-accordion-area li{
+    margin: 10px 0;
+}
+.QA-accordion-area section {
+  border: 1px solid #ccc;
+}
+/*アコーディオンタイトル*/
+.QA-topic {
+  position: relative;/*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s ease;
+}
+/*アイコンの＋と×*/
+.QA-topic span {
+  position: absolute;
+  top: 31%;
+  left: 2%;
+  transform: rotate(0deg);
+  transition: .4s;
+}
+.QA-topic.close span {
+  transform: rotate(45deg);
+}
+/*アコーディオンで現れるエリア*/
+.QA-box {
+  display: none;/*はじめは非表示*/
+  background: #f3f3f3;
+  margin: 0 3% 3% 3%;
+  padding: 3%;
+}
+
 /* 821以下以上 */
 @media screen and (max-width:821px){
   /*topページ*/
