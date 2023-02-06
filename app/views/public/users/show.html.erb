@@ -2,7 +2,7 @@
   <h2><span>マイページ</span></h2>
   <div class="profile-show">
     <div class="profile-box-left">
-      <%= image_tag @user.get_profile_image(90,90), style: "border-radius: 50%;", class: "profile-img" %>
+      <%= image_tag @user.get_profile_image(90,90), class: "profile-img" %>
       <span><%= @user.name %></span>
     </div>
     <div class="profile-box-right">
