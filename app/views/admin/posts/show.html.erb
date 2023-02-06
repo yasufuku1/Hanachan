@@ -1,0 +1,46 @@
+<div class="main">
+  <h2><span>投稿詳細</span></h2>
+  <div class="article-user">
+    <div class="article-box">
+      <%= link_to user_path(@post.user_id) do %>
+        <%= image_tag @post.user.get_profile_image(100,100), class: "profile-img" %>
+      <div class="post-profile">
+        <p><%= @post.user.name %></p>
+      <% end %>
+      </div>
+    </div>
+    <div class="article-box">
+      <div class="edit-box">
+      <%= link_to edit_admin_post_path(@post.id), class: "edit-font" do %>
+        投稿記事を編集
+        <i class="fas fa-edit"></i>
+      <% end %>
+      </div>
+      <div class="delete-box">
+      <%= link_to admin_post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "delete-font" do %>
+        投稿を削除
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+      </div>
+    </div>
+  </div>
+    <div class="article">
+      <div class="sec-02-left">
+          <%= image_tag @post.get_image(350,350), class: "article-image" %>
+      </div>
+      <div class="sec-02-right">
+        <div class="article-culom">
+          <p class="post-title"><%= @post.title %></p>
+        </div>
+        <div class="article-culom">
+          <%= simple_format(@post.body) %>
+        </div>
+      </div>
+  </div>
+  <p><i class="far fa-heart"></i><%= @post.favorites.count %></p>
+  <div class="article-post-comments">
+    <div id="post_comments-area">
+      <%= render "admin/post_comments/index", post: @post %>
+    </div>
+  </div>
+</div>

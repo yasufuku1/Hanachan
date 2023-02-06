@@ -1,0 +1,40 @@
+<div class="photo-container">
+  <h2><span>投稿一覧</span></h2>
+  <div class="photoGarelly">
+  <% @posts.each do |post| %>
+  <div class="items">
+    <%= image_tag post.get_image(500, 500), class: "post-img" %>
+    <div class="index-article">
+      <p class="title-font">
+        <%= post.title.truncate(11) %>
+      </p>
+      <span class="post-body"><%= post.body.truncate(25) %></span>
+      <div class="read-more">
+        <!--ログインをしており、お気に入り登録をしていれば-->
+        <% if user_signed_in? %>
+          <% if post.favorited_by?(current_user) %>
+          <!--赤色で表示-->
+          <p class="post-favorite">
+            <i class="fas fa-heart"></i><%= post.favorites.count %>
+          </p>
+          <% else %>
+            <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
+          <% end %>
+        <% end %>
+        <!--ログインをしていなければ-->
+        <% unless user_signed_in? %>
+          <p><i class="far fa-heart"></i><%= post.favorites.count %></p>
+        <% end %>
+　      <p><i class="far fa-comment"></i><%= post.post_comments.count %></p>
+　      <%= link_to admin_post_path(post.id) do %>
+　        <p class="read-more">read more…</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="kaminari">
+  <%= paginate @posts %>
+</div>
+</div>

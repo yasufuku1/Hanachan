@@ -42,11 +42,17 @@
             <% end %>
             </p>
           <% end %>
-        </li>        <!--管理者側ログイン-->
+        </li>
+        <!--管理者側ログイン-->
         <% elsif admin_signed_in? %>
         <li class="nav-item">
           <%= link_to admin_users_path do %>
             <p class="nav-font">ユーザ一覧</p>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to admin_posts_path do %>
+            <p class="nav-font">投稿一覧</p>
           <% end %>
         </li>
         <li class="nav-item">
