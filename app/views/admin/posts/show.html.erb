@@ -2,7 +2,7 @@
   <h2><span>投稿詳細</span></h2>
   <div class="article-user">
     <div class="article-box">
-      <%= link_to user_path(@post.user_id) do %>
+      <%= link_to admin_user_path(@post.user_id) do %>
         <%= image_tag @post.user.get_profile_image(100,100), class: "profile-img" %>
       <div class="post-profile">
         <p><%= @post.user.name %></p>
