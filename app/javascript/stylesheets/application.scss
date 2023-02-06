@@ -167,6 +167,20 @@ body {
   border-radius: 6px;
 }
 /* ---------------------------- */
+/* ----プロフィール画像丸みを統一---- */
+/* ---------------------------- */
+.profile-img {
+  border-radius: 50%;
+}
+/* ---------------------------- */
+/* ----ヘッダー通知未読マーク一---- */
+/* ---------------------------- */
+.fa-circle {
+  color: #ffb6c1;
+  position: absolute;
+  left: 75%;
+}
+/* ---------------------------- */
 /* ---- ログイン、
         新規登録
         プロフィール編集
@@ -254,8 +268,8 @@ body {
   margin: 0.6em auto;
   border-bottom: none;
 }
-.user_index_box .user-sec01 .user-item:first-child{
-  flex-grow :1;
+.user_index_box .user-sec01 .user-item:first-child {
+  flex-grow : 1;
   flex-basis: 35%;
   text-align: center;
 }

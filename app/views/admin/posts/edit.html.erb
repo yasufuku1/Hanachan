@@ -1,0 +1,29 @@
+<div class="container">
+  <h2><span>投稿編集</span></h2>
+
+   <div class="box">
+  <%= form_with model: @post, url: admin_post_path(@post.id), local:true do |f| %>
+    <div class="field">
+      <%= f.label :"投稿写真" %><br>
+      <%= f.file_field :image, accept: "image/*" %>
+      <%= render "public/shared/image_error_message", resource: @post %>
+    </div>
+
+    <div class="field">
+      <%= f.label :"タイトル" %>
+      <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder: 'いいお花みつけました' %>
+      <%= render "public/shared/titlel_error_message", resource: @post %>
+    </div>
+
+    <div class="field">
+      <%= f.label :"投稿内容" %>
+      <%= f.text_area :body, autofocus: true, autocomplete: "body", placeholder: 'ここにコメントを書いてください。' %>
+      <%= render "public/shared/body_error_message", resource: @post %>
+    </div>
+
+    <div class="button-box">
+      <%= f.submit "記事を変更する" %>
+    <% end %>
+    </div>
+  </div>
+</div>

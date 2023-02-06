@@ -10,20 +10,18 @@
       </div>
     </div>
     <div class="article-box">
-    <% if @post.user_id == current_user.id %>
       <div class="edit-box">
-      <%= link_to edit_post_path(@post.id), class: "edit-font" do %>
+      <%= link_to edit_admin_post_path(@post.id), class: "edit-font" do %>
         投稿記事を編集
         <i class="fas fa-edit"></i>
       <% end %>
       </div>
       <div class="delete-box">
-      <%= link_to post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "delete-font" do %>
+      <%= link_to admin_post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？", class: "delete-font" do %>
         投稿を削除
         <i class="fas fa-trash-alt"></i>
       <% end %>
       </div>
-    <% end %>
     </div>
   </div>
     <div class="article">
@@ -39,18 +37,11 @@
         </div>
       </div>
   </div>
-  <div id="favorite_btn_<%= @post.id %>">
-    <%= render "public/favorites/favorites_btn", post: @post %>
-  </div>
+  <p><i class="far fa-heart"></i><%= @post.favorites.count %></p>
   <div class="article-post-comments">
     <div id="post_comments-area">
-      <%= render "public/post_comments/index", post: @post %>
+      <%= render "admin/post_comments/index", post: @post %>
     </div>
-    <% if current_user.name != "guestuser" %>
-    <div class="comment-sec02">
-      <%= render "public/post_comments/format", post: @post, post_comment: @post_comment %>
-    </div>
-  <% end %>
   </div>
 </div>
 <script>
