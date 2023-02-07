@@ -283,6 +283,193 @@ body {
   flex-basis: 40%;
   text-align: center;
 }
+/* ---------------------------- */
+/* ----投稿一覧ページ---- */
+/* ---------------------------- */
+.photo-container {
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.photo-container h2 {
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: .17em;
+  margin-bottom: 21px;
+}
+.photo-container h2 span {
+  font-size: 29px;
+  font-weight: 700;
+  background-image: linear-gradient(344deg, rgba(93,162,87,1) 39%, rgba(231,128,128,1) 96%);
+  -webkit-background-clip:  text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Noto Serif JP', serif;
+}
+.photoGarelly {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.photoGarelly .items {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  margin: 9px;
+}
+.photoGarelly .items img.post-img {
+  text-align: center;
+  width: 100%;
+}
+.photoGarelly .items .index-article {
+  display: flex;
+  flex-direction: column;
+}
+.photoGarelly .items .index-article .title-font {
+  font-weight: 600;
+  margin: 0.3em auto;
+  font-size: 1.1em;
+}
+.photoGarelly .items .index-article .post-body {
+  font-size: .9em;
+  padding: 0.5em;
+  min-height: 72px;
+}
+.photoGarelly .items .index-article .read-more {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.photoGarelly .items .index-article .read-more p:nth-child(2) {
+  margin-left: 0.1rem;
+}
+/* 投稿一覧read moreボタン　ここから */
+.photoGarelly .items .index-article .read-more p:last-child {
+  border: 2px solid #00BCD4;
+  background: #00BCD4;
+  border-radius: 3px;
+  color: #fff;
+  padding: 2px;
+  width: 97px;
+  font-size: 0.9rem;
+  margin-left: 0.1rem;
+  transition: .4s;
+}
+.photoGarelly .items .index-article .read-more p:last-child:hover {
+  background: #fff;
+  color: #00BCD4;
+}
+/* 投稿一覧read moreボタン ここまで*/
+/* ---------------------------- */
+/* ----投稿詳細ページ---- */
+/* ---------------------------- */
+.article-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.article-user .article-box:first-child {
+  display: flex;
+  align-items: center;
+}
+.article-user .article-box:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+.article-user .article-box .post-profile-img {
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 50%;
+}
+.article-user .article-box .post-profile {
+  align-items: center;
+  padding: 0 20px;
+}
+/*投稿編集ボタン　ここから*/
+.article-user .article-box .edit-box {
+  margin-right: 50px;
+}
+.article-user .article-box .edit-box a {
+  padding: .3em .9em .4em;
+  text-align: center;
+  color: #fff;
+  background: #c0c0c0;
+  transition: .4s;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  font-size: .9em;
+}
+.article-user .article-box .edit-box a:hover{
+  color: #c0c0c0;
+  background: #fff;
+}
+/*投稿編集ボタン　ここまで*/
+/*投稿削除ボタン　ここから*/
+.article-user .article-box .delete-box {
+  margin-right: 9px;
+}
+.article-user .article-box .delete-box a {
+  padding: .3em .9em .4em;
+  text-align: center;
+  color: #fff;
+  background: #c0c0c0;
+  transition: .4s;
+  border: 2px solid #c0c0c0;
+  border-radius: 3px;
+  font-size: .9em;
+}
+.article-user .article-box .delete-box a:hover{
+  color: #c0c0c0;
+  background: #fff;
+}
+/*投稿削除ボタン　ここまで*/
+.article {
+  display: flex;
+  margin: 40px 0 10px;
+  background-color: #eee;
+  width: 100%;
+}
+.article .sec-02-left {
+  display: flex;
+  flex-grow : 1;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.article .sec-02-right .article-edit {
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+.article .sec-02-right {
+  display: block;
+  flex-grow: 3;
+  flex-basis: 70%;
+  min-width: 350px;
+  width: 100%;
+}
+.article .sec-02-right .article-culom:first-child {
+  display: block;
+  letter-spacing: .13em;
+  padding: 25px 30px;
+  font-family: 'Noto Serif JP', serif;
+  min-width: 100%;
+}
+.article .sec-02-right .article-culom:first-child .post-title {
+  overflow-wrap: break-word;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+.article .sec-02-right .article-culom:nth-child(2) {
+  letter-spacing: .12em;
+  padding: 0 30px 25px;
+}
+.article .sec-02-right .article-culom:nth-child(2) p {
+  overflow-wrap: break-word;
+  font-size: 1.1em;
+}
 /* レスポンシブ対応 */
 /* 950以下821以上 */
 @media screen and (max-width:950px){
@@ -298,7 +485,45 @@ body {
     width: 47%;
   }
 }
-/* 649以下以上 */
+/* 724以下以上 */
+@media screen and (max-width:724px){
+  /*記事投稿一覧*/
+  .article-user {
+    flex-direction: column;
+  }
+  .article-user .article-box {
+    margin: .9em auto;
+  }
+  .article-user .article-box .edit-box {
+    margin-right: 20px;
+}
+  .article-user .article-box .delete-box {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  .article {
+    display: flex;
+    flex-direction: column;
+  }
+  .article .sec-02-left {
+    background-color: #fff;
+    justify-content: center;
+  }
+  .article-image {
+    width: 100%;
+  }
+  .article .sec-02-right {
+    min-width: auto;
+  }
+  .article .sec-02-right .article-culom:first-child {
+    margin: 0 2px 10px;
+    letter-spacing: .11em;
+  }
+  .article .sec-02-right .article-culom:nth-child(2) {
+    margin-left: 2px;
+    letter-spacing: .11em;
+  }
+}/* 649以下以上 */
 @media screen and (max-width:649px){
   /*記事投稿一覧*/
   .photoGarelly .items {
@@ -321,5 +546,35 @@ body {
   }
   .profile-show {
     flex-direction: column;
+  }
+  /*投稿詳細*/
+  .article-user {
+    flex-direction: column;
+  }
+  .article-user .article-box:first-child {
+    margin: 5px 5px 20px;
+  }
+  .article-user .article-box:nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .article-edit .edit-box {
+    margin: 10px auto;
+  }
+  .article-user .article-box .edit-box a {
+    font-size: .8em;
+  }
+  .article-edit .delete-box {
+    margin: 10px auto;
+  }
+  .article-user .article-box .delete-box a {
+    font-size: .8em;
+  }
+  .article .sec-02-right .article-culom:first-child .post-title {
+    font-size: 1.2em;
+  }
+  .article .sec-02-right .article-culom:nth-child(2) p {
+    font-size: 1em;
   }
 }
