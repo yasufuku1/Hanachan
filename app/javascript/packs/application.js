@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', function () {
 // スクロールの表示
  $(window).scroll(function () {
      let scrollTopValue = $(document).scrollTop();
-    //  スクロールの量が500を超えたら
+    //  スクロールの量が150を超えたら
      if (scrollTopValue > 150) {
         //  アイコンを表示
      $('.footer .page-top').fadeIn();
@@ -68,7 +68,7 @@ $(document).on('turbolinks:load', function () {
 
     if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
       $(this).removeClass('close');//クラス名を除去し
-    }else{//それ以外は
+    } else {//それ以外は
       $(this).addClass('close');//クラス名closeを付与
     }
   });

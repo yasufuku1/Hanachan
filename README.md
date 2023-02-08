@@ -54,7 +54,7 @@
 
 - [テーブル定義書](https://drive.google.com/file/d/1P2tIFi9lrKaOIgiarPTBdM_k50ax7LvQ/view?usp=share_link)
 
-- [アプリケーション詳細設計書](https://drive.google.com/file/d/1n3qUZ1N--ZtbvP3uvdMNVGvUHi_lrOb0/view?usp=share_link)
+- [アプリケーション詳細設計書](https://drive.google.com/file/d/1CkrSu0c8SFr4yqreWcJzkgw_4UQXHVyM/view?usp=share_link)
 
 ## 使用素材
 
